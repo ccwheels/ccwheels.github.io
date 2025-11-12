@@ -1,0 +1,154 @@
+<!-- sam hettinger painting site 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hettinger Painting Group — Professional Residential & Commercial Painting</title>
+  <meta name="description" content="Hettinger Painting Group provides professional interior & exterior painting, staining, and coatings. Free estimates, licensed & insured."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css"/>
+  <link rel="icon" href="assets/images/favicon.png" type="image/png"/>
+</head>
+<body>
+  <!-- ==================== NAVIGATION ==================== -->
+  <header class="navbar">
+    <a class="logo" href="#home">Hettinger <span>Painting</span> Group</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="login.html" class="btn btn-outline">Owner&nbsp;Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section id="home" class="hero">
+    <div class="hero-card">
+      <h1>Precision finishes. Honest work. Zero mess.</h1>
+      <p>Interior & exterior painting for homes, offices, and new builds across the valley. Prep done right, lines laser‑straight, results that last.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Get a Free Estimate</a>
+        <a href="#projects" class="btn btn-outline">See Our Work</a>
+      </div>
+      <ul class="badges">
+        <li>Licensed & Insured</li>
+        <li>5‑Star Rated</li>
+        <li>Color Consultation</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES / WHY CHOOSE US ==================== -->
+  <section id="services" class="section light">
+    <h2 class="section-title">Why Choose Hettinger?</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Clean, Crisp Lines</h3>
+        <p>Meticulous prep, caulk, and masking so edges stay sharp and walls stay smooth.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🛡️</div>
+        <h3>Premium Materials</h3>
+        <p>We spec high‑grade primers and low‑VOC paints for durability and healthy air.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon">🤝</div>
+        <h3>On‑Time, On‑Budget</h3>
+        <p>Clear timelines, daily updates, and tidy job sites. We respect your space.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS (SLIDESHOW) ==================== -->
+  <section id="projects" class="section">
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="slideshow">
+      <button class="slide-nav prev" aria-label="Previous project" onclick="changeSlide(-1)">❮</button>
+      <div class="slides">
+        <figure class="slide active">
+          <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?w=1400" alt="Living room repaint with accent wall"/>
+          <figcaption>
+            <h3>Modern Living Room Repaint</h3>
+            <p>Eggshell interior with accent wall; complete drywall touch‑ups and trim refresh.</p>
+          </figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400" alt="Exterior home repaint in warm neutral"/>
+          <figcaption>
+            <h3>Exterior Refresh</h3>
+            <p>Two‑tone exterior with elastomeric coating and UV‑resistant finish.</p>
+          </figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1400" alt="Office space repaint with glass partitions"/>
+          <figcaption>
+            <h3>Commercial Office</h3>
+            <p>Tenant improvement repaint on tight schedule with low‑odor products.</p>
+          </figcaption>
+        </figure>
+        <figure class="slide">
+          <img src="https://images.unsplash.com/photo-1505692952047-1a78307da8b2?w=1400" alt="Kitchen cabinet refinishing"/>
+          <figcaption>
+            <h3>Cabinet Refinishing</h3>
+            <p>Degrease, sand, prime, and finish for a factory‑smooth cabinet look.</p>
+          </figcaption>
+        </figure>
+      </div>
+      <button class="slide-nav next" aria-label="Next project" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <div class="dots" role="tablist" aria-label="Project slides">
+      <button class="dot active" onclick="currentSlide(0)" aria-label="Slide 1"></button>
+      <button class="dot" onclick="currentSlide(1)" aria-label="Slide 2"></button>
+      <button class="dot" onclick="currentSlide(2)" aria-label="Slide 3"></button>
+      <button class="dot" onclick="currentSlide(3)" aria-label="Slide 4"></button>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact" class="section light">
+    <h2 class="section-title">Get Your Free Estimate</h2>
+    <form id="contactForm" class="form">
+      <div class="grid">
+        <label class="form-group">Full Name
+          <input type="text" id="name" name="name" required placeholder="Jane Doe"/>
+        </label>
+        <label class="form-group">Email
+          <input type="email" id="email" name="email" required placeholder="jane@email.com"/>
+        </label>
+        <label class="form-group">Phone
+          <input type="tel" id="phone" name="phone" required placeholder="(555) 555‑5555"/>
+        </label>
+        <label class="form-group span-2">Project Details
+          <textarea id="message" name="message" required placeholder="Tell us about your project (rooms, colors, timeline)"></textarea>
+        </label>
+      </div>
+      <button class="btn" type="submit">Send</button>
+      <p id="formNote" class="note">This demo form shows a success message only (no backend on GitHub Pages).</p>
+    </form>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p><strong>Hettinger Painting Group</strong> &middot; Licensed & Insured</p>
+      <p>&copy; <span id="year"></span> Hettinger Painting Group. All rights reserved.</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook">📘</a>
+        <a href="#" aria-label="Instagram">📷</a>
+        <a href="#" aria-label="LinkedIn">💼</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

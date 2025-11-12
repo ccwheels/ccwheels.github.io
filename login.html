@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Owner Login — Hettinger Painting Group</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body class="login-body">
+  <main class="login-card">
+    <img src="assets/images/mark.svg" alt="HPG logo" class="login-logo"/>
+    <h1>Owner Login</h1>
+    <p class="muted small">This is a demo page for GitHub Pages (static hosting). Replace with a real auth page on a backend later.</p>
+
+    <form id="loginForm" class="form">
+      <label class="form-group">Username
+        <input type="text" id="username" required/>
+      </label>
+      <label class="form-group">Password
+        <input type="password" id="password" required/>
+      </label>
+      <button class="btn" type="submit">Sign In</button>
+      <a class="back-link" href="index.html">← Back to Home</a>
+    </form>
+    <p id="loginMsg" class="note" role="status"></p>
+  </main>
+  <script>
+    // Fake client-only login to demonstrate UX on static hosting
+    const form = document.getElementById('loginForm');
+    const msg = document.getElementById('loginMsg');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      msg.textContent = 'For security, login requires a backend. Please contact support to enable access.';
+    });
+  </script>
+</body>
+</html>
