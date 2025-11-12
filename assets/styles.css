@@ -1,12 +1,12 @@
 /* Hettinger Painting Group — styles */
 :root {
-  --brand: #1d3557;
-  --brand-2: #e63946;
+  --brand: #3886b8;
+  --brand-2: #1e4863;
   --ink: #1a1a1a;
   --muted: #3886b8;
   --paper: #ffffff;
   --paper-2: #f6f7fb;
-  --ring: rgba(29,53,87,0.35);
+  --ring: #1e4863;
 }
 
 * { box-sizing: border-box; }
@@ -42,12 +42,12 @@ body {
 }
 .btn:hover { filter: brightness(1.05); }
 .btn-outline { background: transparent; color: var(--brand); }
-.btn-outline:hover { background: rgba(47,111,146,.08); }
+.btn-outline:hover { background: var(--brand-2); }
 
 /* ===== HERO ===== */
 .hero {
   margin-top: 68px; min-height: 80vh;
-  background: linear-gradient(to bottom, rgba(56,134,184,.65), rgba(56,134,184,.65)),
+  background: linear-gradient(to bottom, var(--brand), var(--brand-2)),
     url('https://images.unsplash.com/photo-1582582429416-0243d1559b06?w=2000') center/cover no-repeat fixed;
   display: grid; place-items: center; padding: 6vh 5vw;
 }
@@ -116,7 +116,7 @@ figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem 1.2
 .back-link { display: inline-block; margin-top: .75rem; color: var(--brand); text-decoration: none; }
 
 /* ===== FOOTER ===== */
-.footer { background: #0f172a; color: #e2e8f0; }
+.footer { background: var(--brand-2); color: #e2e8f0; }
 .footer-inner { padding: 40px 5vw; text-align: center; }
 .footer .socials { display: flex; gap: .75rem; justify-content: center; margin-top: .5rem; }
 
