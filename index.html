@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hettinger Painting Group — Professional Residential & Commercial Painting</title>
+  <title>Hettinger Painting Group — Professional Commercial Painting</title>
   <meta name="description" content="Hettinger Painting Group provides professional interior & exterior painting, staining, and coatings. Free estimates, licensed & insured."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css"/>
-  <link rel="icon" href="assets/images/favicon.png" type="image/png"/>
+  <link rel="icon" href="assets/images/hpg.png" type="image/png"/>
 </head>
 <body>
   <!-- ==================== NAVIGATION ==================== -->
@@ -24,7 +24,6 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="login.html" class="btn btn-outline">Owner&nbsp;Login</a></li>
       </ul>
     </nav>
   </header>
@@ -33,7 +32,7 @@
   <section id="home" class="hero">
     <div class="hero-card">
       <h1>Precision finishes. Honest work. Zero mess.</h1>
-      <p>Interior & exterior painting for homes, offices, and new builds across the valley. Prep done right, lines laser‑straight, results that last.</p>
+      <p>Interior & exterior painting for commercial buildings across the valley. Prep done right, lines laser‑straight, results that last.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn">Get a Free Estimate</a>
         <a href="#projects" class="btn btn-outline">See Our Work</a>
@@ -48,7 +47,7 @@
 
   <!-- ==================== SERVICES / WHY CHOOSE US ==================== -->
   <section id="services" class="section light">
-    <h2 class="section-title">Why Choose Hettinger?</h2>
+    <h2 class="section-title">Why Choose Hettinger Painting Group?</h2>
     <div class="cards">
       <article class="card">
         <div class="card-icon">🎯</div>
@@ -118,7 +117,7 @@
   <!-- ==================== CONTACT ==================== -->
   <section id="contact" class="section light">
     <h2 class="section-title">Get Your Free Estimate</h2>
-    <form id="contactForm" class="form">
+    <form id="contactForm" class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <div class="grid">
         <label class="form-group">Full Name
           <input type="text" id="name" name="name" required placeholder="Jane Doe"/>
@@ -130,24 +129,25 @@
           <input type="tel" id="phone" name="phone" required placeholder="(555) 555‑5555"/>
         </label>
         <label class="form-group span-2">Project Details
-          <textarea id="message" name="message" required placeholder="Tell us about your project (rooms, colors, timeline)"></textarea>
+          <textarea id="message" name="message" required placeholder="Tell us about your project (square footage, colors, timeline)"></textarea>
         </label>
       </div>
       <button class="btn" type="submit">Send</button>
-      <p id="formNote" class="note">This demo form shows a success message only (no backend on GitHub Pages).</p>
+      <p id="formStatus" class="note" style="display:none;"></p>
     </form>
   </section>
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="footer-inner">
-      <p><strong>Hettinger Painting Group</strong> &middot; Licensed & Insured</p>
-      <p>&copy; <span id="year"></span> Hettinger Painting Group. All rights reserved.</p>
+      <p><strong>Hett Painting Group</strong> &middot; Licensed & Insured</p>
       <div class="socials">
         <a href="#" aria-label="Facebook">📘</a>
         <a href="#" aria-label="Instagram">📷</a>
         <a href="#" aria-label="LinkedIn">💼</a>
       </div>
+      <p>&copy; <span id="year"></span> Hett Painting Group. All rights reserved.</p>
+      <p>ROC 361446</p>
     </div>
   </footer>
 
