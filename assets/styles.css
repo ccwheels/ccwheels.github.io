@@ -76,7 +76,7 @@ body {
 
 /* ===== SLIDESHOW ===== */
 .slideshow { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 60px; }
-.slides { position: relative; overflow: hidden; border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,.12); }
+.slides { position: relative; overflow: hidden; border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,.12); z-index: 1; }
 .slide { display: none; }
 .slide.active { display: block; animation: fade .6s ease-in-out; }
 @keyframes fade { from {opacity: 0} to {opacity: 1} }
@@ -86,10 +86,11 @@ figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem 1.2
   color: #fff; }
 .slide-nav { position: absolute; top: 50%; transform: translateY(-50%);
   background: rgba(0,0,0,.6); color: #fff; border: 0; width: 50px; height: 50px; border-radius: 999px;
-  display: grid; place-items: center; cursor: pointer; font-size: 1.2rem; z-index: 10;
-  transition: background .2s, transform .2s;
+  display: grid; place-items: center; cursor: pointer; font-size: 1.2rem; z-index: 20;
+  transition: background .2s, transform .2s; user-select: none;
 }
 .slide-nav:hover { background: rgba(0,0,0,.8); transform: translateY(-50%) scale(1.1); }
+.slide-nav:active { transform: translateY(-50%) scale(0.95); }
 .slide-nav.prev { left: -55px; } .slide-nav.next { right: -55px; }
 .dots { display: flex; gap: .5rem; justify-content: center; margin-top: 1rem; }
 .dot { width: 10px; height: 10px; border-radius: 50%; background: #c7cfe1; border: 0; }
