@@ -118,7 +118,12 @@
   <!-- ==================== CONTACT ==================== -->
   <section id="contact" class="section light">
     <h2 class="section-title">Get Your Free Estimate</h2>
-    <form id="contactForm" class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form id="contactForm" class="form" action="https://formsubmit.co/sam@hettpaintinggroup.com" method="POST">
+      <!-- FormSubmit Configuration -->
+      <input type="hidden" name="_subject" value="New Painting Estimate Request">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      
       <div class="grid">
         <label class="form-group">Full Name
           <input type="text" id="name" name="name" required placeholder="Jane Doe"/>
@@ -134,7 +139,6 @@
         </label>
       </div>
       <button class="btn" type="submit">Send</button>
-      <p id="formStatus" class="note" style="display:none;"></p>
     </form>
   </section>
 

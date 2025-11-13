@@ -38,40 +38,8 @@ if (slideshow) {
 showSlide(0);
 startTimer();
 
-// Contact form status message
-const contactForm = document.getElementById('contactForm');
-const formStatus = document.getElementById('formStatus');
-if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const formData = new FormData(contactForm);
-    
-    try {
-      const response = await fetch(contactForm.action, {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      });
-      
-      if (response.ok) {
-        formStatus.textContent = 'Thank you! We\'ll be in touch soon.';
-        formStatus.style.display = 'block';
-        formStatus.style.color = '#16a34a';
-        contactForm.reset();
-      } else {
-        formStatus.textContent = 'Oops! There was a problem. Please try again.';
-        formStatus.style.display = 'block';
-        formStatus.style.color = '#dc2626';
-      }
-    } catch (error) {
-      formStatus.textContent = 'Oops! There was a problem. Please try again.';
-      formStatus.style.display = 'block';
-      formStatus.style.color = '#dc2626';
-    }
-  });
-}
+// Contact form - FormSubmit handles submission
+// Form will redirect to FormSubmit's thank you page after submission
 
 // Footer year
 document.getElementById('year').textContent = new Date().getFullYear();
