@@ -104,6 +104,7 @@ figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem 1.2
 }
 .form input:focus, .form textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 4px var(--ring); }
 .form textarea { min-height: 140px; resize: vertical; }
+.form .btn { margin-top: 1.25rem; }
 .note { color: var(--muted); margin-top: .75rem; }
 .muted { color: var(--muted); }
 .small { font-size: .9rem; }
@@ -119,6 +120,8 @@ figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem 1.2
 .footer { background: var(--brand-2); color: #e2e8f0; }
 .footer-inner { padding: 40px 5vw; text-align: center; }
 .footer .socials { display: flex; gap: .75rem; justify-content: center; margin-top: .5rem; }
+.footer .socials a { color: #e2e8f0; font-size: 1.5rem; transition: color .2s; }
+.footer .socials a:hover { color: #fff; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 820px) {
