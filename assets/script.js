@@ -25,7 +25,7 @@ function currentSlide(i) {
 }
 
 function nextAuto() { showSlide(current + 1); }
-function startTimer() { timer = setInterval(nextAuto, 5000); }
+function startTimer() { timer = setInterval(nextAuto, 8000); }
 function resetTimer() { clearInterval(timer); startTimer(); }
 
 // Pause auto-advance when user hovers slideshow
