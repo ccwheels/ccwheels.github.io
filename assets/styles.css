@@ -48,7 +48,7 @@ body {
 .hero {
   margin-top: 68px; min-height: 80vh;
   background: linear-gradient(to bottom, var(--brand), var(--brand-2)),
-    url('https://images.unsplash.com/photo-1582582429416-0243d1559b06?w=2000') center/cover no-repeat fixed;
+    url('../images/house.webp') center/cover no-repeat fixed;
   display: grid; place-items: center; padding: 6vh 5vw;
 }
 .hero-card {
