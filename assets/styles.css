@@ -47,18 +47,19 @@ body {
 /* ===== HERO ===== */
 .hero {
   margin-top: 68px; min-height: 80vh;
-  background: url('../images/painted_house.jpg') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/painted_house.jpg') center/cover no-repeat fixed;
   display: grid; place-items: center; padding: 6vh 5vw;
 }
 .hero-card {
-  background: #fff; padding: 2.25rem; max-width: 720px; border-radius: 1rem;
-  box-shadow: 0 20px 50px rgba(0,0,0,.2);
+  background: transparent; padding: 2.25rem; max-width: 720px;
+  text-align: center;
 }
-.hero h1 { margin: 0 0 .75rem 0; font-size: clamp(1.8rem, 3.2vw, 3rem); line-height: 1.15; }
-.hero p { color: var(--muted); margin: 0 0 1.25rem 0; }
-.hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; }
-.badges { display: flex; gap: .75rem; padding: 0; margin: 1rem 0 0; list-style: none; color: var(--muted); }
-.badges li { background: var(--paper-2); padding: .4rem .7rem; border-radius: .5rem; border: 1px solid #e6e8ef; }
+.hero h1 { margin: 0 0 .75rem 0; font-size: clamp(1.8rem, 3.2vw, 3rem); line-height: 1.15; color: #fff; }
+.hero p { color: #e2e8f0; margin: 0 0 1.25rem 0; }
+.hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
+.badges { display: flex; gap: .75rem; padding: 0; margin: 1rem 0 0; list-style: none; color: #fff; justify-content: center; }
+.badges li { background: rgba(0, 0, 0, 0.4); padding: .4rem .7rem; border-radius: .5rem; border: 1px solid rgba(255, 255, 255, 0.2); }
 
 /* ===== SECTIONS ===== */
 .section { padding: 72px 5vw; }
