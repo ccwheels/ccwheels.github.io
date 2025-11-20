@@ -1,12 +1,12 @@
 /* Hettinger Painting Group — styles */
 :root {
   --brand: #b28735;
-  --brand-2: #1e4863;
+  --brand-2: #7d5f25;
   --ink: #1a1a1a;
   --muted: #6f767a;
   --paper: #ffffff;
   --paper-2: #f6f7fb;
-  --ring: #1e4863;
+  --ring: #7d5f25;
 }
 
 * { box-sizing: border-box; }
@@ -124,6 +124,9 @@ figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem 1.2
 .footer .socials { display: flex; gap: .75rem; justify-content: center; margin-top: .5rem; }
 .footer .socials a { color: #e2e8f0; font-size: 1.5rem; transition: color .2s; }
 .footer .socials a:hover { color: #fff; }
+.footer-phone { font-size: 1.5rem; font-weight: 600; margin: 1rem 0; }
+.footer-phone a { color: #e2e8f0; text-decoration: none; transition: color .2s; }
+.footer-phone a:hover { color: #fff; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 820px) {
