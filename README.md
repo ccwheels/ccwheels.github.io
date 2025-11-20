@@ -1,4 +1,4 @@
-# Hettinger Painting Group — Professional Painting Services Website
+# Hett Painting Group — Professional Painting Services Website
 
 [![Live Site](https://img.shields.io/badge/live-site-blue)](https://ccwheels.github.io)
 
