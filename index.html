@@ -23,7 +23,7 @@
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -36,7 +36,7 @@
       <p>Interior & exterior painting for commercial buildings across the valley. Prep done right, lines laser‑straight, results that last.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn">Get a Free Estimate</a>
-        <a href="#projects" class="btn btn-outline">See Our Work</a>
+        <a href="#testimonials" class="btn btn-outline">Read Reviews</a>
       </div>
       <ul class="badges">
         <li>Licensed & Insured</li>
@@ -68,50 +68,45 @@
     </div>
   </section>
 
-  <!-- ==================== PROJECTS (SLIDESHOW) ==================== -->
-  <section id="projects" class="section">
-    <h2 class="section-title">Featured Projects</h2>
+  <!-- ==================== TESTIMONIALS (SLIDESHOW) ==================== -->
+  <section id="testimonials" class="section">
+    <h2 class="section-title">Testimonials</h2>
 
     <div class="slideshow">
-      <button type="button" class="slide-nav prev" aria-label="Previous project" onclick="changeSlide(-1)">❮</button>
+      <button type="button" class="slide-nav prev" aria-label="Previous testimonial" onclick="changeSlide(-1)">❮</button>
       <div class="slides">
-        <figure class="slide active">
-          <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?w=1400" alt="Living room repaint with accent wall"/>
-          <figcaption>
-            <h3>Modern Living Room Repaint</h3>
-            <p>Eggshell interior with accent wall; complete drywall touch‑ups and trim refresh.</p>
-          </figcaption>
+        <figure class="slide active testimonial-slide">
+          <img src="assets/images/testimonial_house1.jpg" alt="Maria's home painting project" class="testimonial-bg"/>
+          <img src="assets/images/testimonial_person1.jpg" alt="Maria" class="testimonial-person"/>
+          <div class="testimonial-quote">
+            <p>"Hett Painting Group transformed our home! The attention to detail was incredible—every edge was perfect, and they kept the space spotless. We couldn't be happier with how our house turned out."</p>
+            <cite>— Maria</cite>
+          </div>
         </figure>
-        <figure class="slide">
-          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400" alt="Exterior home repaint in warm neutral"/>
-          <figcaption>
-            <h3>Exterior Refresh</h3>
-            <p>Two‑tone exterior with elastomeric coating and UV‑resistant finish.</p>
-          </figcaption>
+        <figure class="slide testimonial-slide">
+          <img src="assets/images/testimonial_house2.jpg" alt="Damian's home painting project" class="testimonial-bg"/>
+          <img src="assets/images/testimonial_person2.jpg" alt="Damian" class="testimonial-person"/>
+          <div class="testimonial-quote">
+            <p>"Professional from start to finish. They showed up on time every day, communicated clearly about the process, and the quality of work exceeded my expectations. Highly recommend!"</p>
+            <cite>— Damian</cite>
+          </div>
         </figure>
-        <figure class="slide">
-          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1400" alt="Office space repaint with glass partitions"/>
-          <figcaption>
-            <h3>Commercial Office</h3>
-            <p>Tenant improvement repaint on tight schedule with low‑odor products.</p>
-          </figcaption>
-        </figure>
-        <figure class="slide">
-          <img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf?w=1400" alt="Kitchen cabinet refinishing"/>
-          <figcaption>
-            <h3>Cabinet Refinishing</h3>
-            <p>Degrease, sand, prime, and finish for a factory‑smooth cabinet look.</p>
-          </figcaption>
+        <figure class="slide testimonial-slide">
+          <img src="assets/images/testimonial_house3.jpg" alt="Lisa's home painting project" class="testimonial-bg"/>
+          <img src="assets/images/testimonial_person3.jpg" alt="Lisa" class="testimonial-person"/>
+          <div class="testimonial-quote">
+            <p>"The team was wonderful to work with! They helped us choose the perfect colors and the finish is absolutely beautiful. Our home feels brand new. Worth every penny!"</p>
+            <cite>— Lisa</cite>
+          </div>
         </figure>
       </div>
-      <button type="button" class="slide-nav next" aria-label="Next project" onclick="changeSlide(1)">❯</button>
+      <button type="button" class="slide-nav next" aria-label="Next testimonial" onclick="changeSlide(1)">❯</button>
     </div>
 
-    <div class="dots" role="tablist" aria-label="Project slides">
+    <div class="dots" role="tablist" aria-label="Testimonial slides">
       <button type="button" class="dot active" onclick="currentSlide(0)" aria-label="Slide 1"></button>
       <button type="button" class="dot" onclick="currentSlide(1)" aria-label="Slide 2"></button>
       <button type="button" class="dot" onclick="currentSlide(2)" aria-label="Slide 3"></button>
-      <button type="button" class="dot" onclick="currentSlide(3)" aria-label="Slide 4"></button>
     </div>
   </section>
 
