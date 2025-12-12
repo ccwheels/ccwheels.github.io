@@ -51,6 +51,45 @@ body {
     url('images/Whyworry.png') center/cover no-repeat fixed;
   display: grid; place-items: center; padding: 6vh 5vw;
 }
+
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    padding: 3vh 4vw;
+  }
+  
+  .hero-card {
+    padding: 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .badges {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .badges li {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.6rem;
+  }
+}
 .hero-card {
   background: transparent; padding: 2.25rem; max-width: 720px;
   text-align: center;
