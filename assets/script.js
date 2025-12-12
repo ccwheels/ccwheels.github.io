@@ -37,31 +37,65 @@ if (slideshow) {
 
 showSlide(0);
 startTimer();
+
+// Mobile menu toggle - more robust version
 function toggleMenu() {
   const nav = document.querySelector('nav');
   const menuToggle = document.querySelector('.menu-toggle');
   
-  nav.classList.toggle('active');
-  menuToggle.classList.toggle('active');
+  console.log('toggleMenu called'); // Debug line
+  console.log('nav element:', nav); // Debug line
+  console.log('menuToggle element:', menuToggle); // Debug line
+  
+  if (nav && menuToggle) {
+    nav.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    console.log('Menu toggled, nav has active:', nav.classList.contains('active')); // Debug line
+  } else {
+    console.error('nav or menuToggle not found!'); // Debug line
+  }
 }
 
 function closeMenu() {
   const nav = document.querySelector('nav');
   const menuToggle = document.querySelector('.menu-toggle');
   
-  nav.classList.remove('active');
-  menuToggle.classList.remove('active');
+  if (nav && menuToggle) {
+    nav.classList.remove('active');
+    menuToggle.classList.remove('active');
+  }
 }
 
-// Close menu when clicking outside
-document.addEventListener('click', function(event) {
-  const nav = document.querySelector('nav');
+
+// Also add event listener as backup
+document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
-  const navbar = document.querySelector('.navbar');
+  const nav = document.querySelector('nav');
   
-  if (!navbar.contains(event.target) && nav.classList.contains('active')) {
-    closeMenu();
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('Button clicked via event listener'); // Debug line
+      toggleMenu();
+    });
   }
+  
+  // Close menu when clicking nav links
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      closeMenu();
+    });
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(event) {
+    const navbar = document.querySelector('.navbar');
+    if (navbar && nav && !navbar.contains(event.target) && nav.classList.contains('active')) {
+      closeMenu();
+    }
+  });
 });
 
 // Contact form - FormSubmit handles submission
