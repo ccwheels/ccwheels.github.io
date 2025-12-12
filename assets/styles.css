@@ -131,6 +131,11 @@ figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem 1.2
   font-size: 3rem;
   margin-bottom: 1rem;
   text-align: center;
+  color: #0066cc; /* Match your brand color */
+}
+
+.service-icon i {
+  display: inline-block;
 }
 
 .service-content h3 {
