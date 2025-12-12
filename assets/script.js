@@ -37,6 +37,32 @@ if (slideshow) {
 
 showSlide(0);
 startTimer();
+function toggleMenu() {
+  const nav = document.querySelector('nav');
+  const menuToggle = document.querySelector('.menu-toggle');
+  
+  nav.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+}
+
+function closeMenu() {
+  const nav = document.querySelector('nav');
+  const menuToggle = document.querySelector('.menu-toggle');
+  
+  nav.classList.remove('active');
+  menuToggle.classList.remove('active');
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+  const nav = document.querySelector('nav');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navbar = document.querySelector('.navbar');
+  
+  if (!navbar.contains(event.target) && nav.classList.contains('active')) {
+    closeMenu();
+  }
+});
 
 // Contact form - FormSubmit handles submission
 // Form will redirect to FormSubmit's thank you page after submission
