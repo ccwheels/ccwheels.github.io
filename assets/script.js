@@ -43,18 +43,11 @@ function toggleMenu() {
   const nav = document.querySelector('nav');
   const menuToggle = document.querySelector('.menu-toggle');
   
-  console.log('toggleMenu called'); // Debug line
-  console.log('nav element:', nav); // Debug line
-  console.log('menuToggle element:', menuToggle); // Debug line
-  
   if (nav && menuToggle) {
     nav.classList.toggle('active');
     menuToggle.classList.toggle('active');
-    console.log('Menu toggled, nav has active:', nav.classList.contains('active')); // Debug line
-  } else {
-    console.error('nav or menuToggle not found!'); // Debug line
   }
-}
+} 
 
 function closeMenu() {
   const nav = document.querySelector('nav');
@@ -76,7 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
     menuToggle.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
-      console.log('Button clicked via event listener'); // Debug line
       toggleMenu();
     });
   }
