@@ -233,9 +233,9 @@ body {
 
 /* Service-areas page hero helper */
 .service-areas-hero {
-  margin-top: 60px;
-  min-height: 50vh;
-  padding: 4vh 4vw;
+  min-height: 70vh !important; /* Make it taller - adjust this number as needed */
+  background-size: cover !important;
+  background-position: center center !important;
 }
 
 /* Anchor offset */
