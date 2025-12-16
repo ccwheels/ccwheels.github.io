@@ -24,7 +24,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1.5rem;   /* tightened */
   background: #fff;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   position: sticky;
@@ -150,10 +150,14 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  margin-top: 68px; min-height: 80vh;
+  margin-top: 60px;          /* was larger before */
+  min-height: 70vh;          /* was 80vh */
+  background-color: #333;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('images/Whyworry.png') center/cover no-repeat fixed;
-  display: grid; place-items: center; padding: 6vh 5vw;
+    url('images/Screen Shot 2025-12-09 at 7.51.41 PM.png') center/cover no-repeat fixed;
+  display: grid;
+  place-items: center;
+  padding: 4vh 4vw;          /* was 6vh 5vw */
 }
 
 
@@ -205,7 +209,9 @@ body {
 .badges li { background: rgba(0, 0, 0, 0.4); padding: .4rem .7rem; border-radius: .5rem; border: 1px solid rgba(255, 255, 255, 0.2); }
 
 /* ===== SECTIONS ===== */
-.section { padding: 72px 5vw; }
+.section {
+  padding: 3rem 2rem;        /* slightly tighter */
+}
 .section.light { background: var(--paper-2); }
 .section-title { text-align: center; font-size: 2rem; margin: 0 0 2rem 0; }
 
@@ -216,6 +222,26 @@ body {
 .card { background: #fff; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 8px 30px rgba(0,0,0,.06); text-align: center; }
 .card-icon { font-size: 2rem; }
 .card h3 { margin: .5rem 0; }
+/* Optional: logo & mobile tweaks */
+.logo-img {
+  height: 70px;
+}
+@media (max-width: 768px) {
+  .navbar { padding: 0.65rem 1.25rem; }
+  .logo-img { height: 60px; }
+}
+
+/* Service-areas page hero helper */
+.service-areas-hero {
+  margin-top: 60px;
+  min-height: 50vh;
+  padding: 4vh 4vw;
+}
+
+/* Anchor offset */
+section {
+  scroll-margin-top: 90px;
+}
 
 /* ===== SLIDESHOW ===== */
 .slideshow { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 60px; }
