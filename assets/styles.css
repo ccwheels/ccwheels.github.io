@@ -764,8 +764,8 @@ figcaption {
 
 /* ===== FOOTER ===== */
 .footer {
-  background: var(--brand-2);
-  color: #e2e8f0;
+  background: #c99d4a; /* Even lighter gold */
+  color: #1a1a1a; /* Darker text for better contrast on light background */
 }
 
 .footer-inner {
