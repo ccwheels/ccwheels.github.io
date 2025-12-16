@@ -86,10 +86,14 @@ body {
   color: #0066cc;
 }
 
-/* Mobile menu styles */
+/* Mobile menu styles - UPDATED */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
+  }
+  
+  .navbar {
+    position: relative; /* Add this */
   }
   
   nav {
@@ -102,6 +106,7 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
+    z-index: 999; /* Add this */
   }
   
   nav.active {
