@@ -195,40 +195,69 @@ body {
 
 /* ===== HERO ===== */
 .hero {
-  margin-top: 60px;          /* was larger before */
-  min-height: 70vh;          /* was 80vh */
+  margin-top: 60px;
+  min-height: 70vh;
   background-color: #333;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('images/Screen Shot 2025-12-09 at 7.51.41 PM.png') center/cover no-repeat fixed;
   display: grid;
   place-items: center;
-  padding: 4vh 4vw;          /* was 6vh 5vw */
+  padding: 4vh 4vw;
 }
 
-  .hero-card {
-  background: transparent; padding: 2.25rem; max-width: 720px;
+.hero-card {
+  background: transparent;
+  padding: 2.25rem;
+  max-width: 720px;
   text-align: center;
 }
-.hero h1 { margin: 0 0 .75rem 0; font-size: clamp(1.8rem, 3.2vw, 3rem); line-height: 1.15; color: #fff; }
-.hero p { color: #e2e8f0; margin: 0 0 1.25rem 0; }
-.hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
-.badges { display: flex; gap: .75rem; padding: 0; margin: 1rem 0 0; list-style: none; color: #fff; justify-content: center; }
-.badges li { background: rgba(0, 0, 0, 0.4); padding: .4rem .7rem; border-radius: .5rem; border: 1px solid rgba(255, 255, 255, 0.2); }
 
-/* Mobile hero background fix - ONLY affects mobile */
-.logo-img {
-  height: 70px;
+.hero h1 {
+  margin: 0 0 .75rem 0;
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  line-height: 1.15;
+  color: #fff;
 }
+
+.hero p {
+  color: #e2e8f0;
+  margin: 0 0 1.25rem 0;
+}
+
+.hero-cta {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.badges {
+  display: flex;
+  gap: .75rem;
+  padding: 0;
+  margin: 1rem 0 0;
+  list-style: none;
+  color: #fff;
+  justify-content: center;
+}
+
+.badges li {
+  background: rgba(0, 0, 0, 0.4);
+  padding: .4rem .7rem;
+  border-radius: .5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile hero styles - match service-areas */
 @media (max-width: 768px) {
-  .navbar { padding: 0.65rem 1.25rem; }
-  .logo-img { height: 60px; }
-}
-
-/* main page hero helper */
-.main-hero {
-  min-height: 70vh !important; /* Make it taller - adjust this number as needed */
-  background-size: cover !important;
-  background-position: center center !important;
+  .hero {
+    min-height: 50vh;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 3vh 4vw;
+  }
   
   .hero-card {
     padding: 1.5rem;
@@ -241,11 +270,11 @@ body {
   .hero p {
     font-size: 0.9rem;
   }
-}
   
   .hero-cta {
     flex-direction: column;
     gap: 0.5rem;
+    align-items: center;
   }
   
   .badges {
