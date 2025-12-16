@@ -176,14 +176,19 @@ body {
 .badges li { background: rgba(0, 0, 0, 0.4); padding: .4rem .7rem; border-radius: .5rem; border: 1px solid rgba(255, 255, 255, 0.2); }
 
 /* Mobile hero background fix - ONLY affects mobile */
+.logo-img {
+  height: 70px;
+}
 @media (max-width: 768px) {
-  .hero {
-    min-height: 50vh;
-    background-attachment: scroll;
-     background-size: 70%;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
+  .navbar { padding: 0.65rem 1.25rem; }
+  .logo-img { height: 60px; }
+}
+
+/* main page hero helper */
+.main-hero {
+  min-height: 70vh !important; /* Make it taller - adjust this number as needed */
+  background-size: cover !important;
+  background-position: center center !important;
   
   .hero-card {
     padding: 1.5rem;
