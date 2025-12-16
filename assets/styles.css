@@ -265,7 +265,7 @@ section {
 .service-areas-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem; /* Adds padding to prevent text from edge */
+  padding: 0 2rem;
 }
 
 .service-area-row {
@@ -276,14 +276,21 @@ section {
   margin-bottom: 3rem;
   background: white;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-area-row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
 }
 
 .service-area-image {
   width: 100%;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .service-area-image img {
@@ -293,10 +300,15 @@ section {
   border-radius: 8px;
   object-fit: cover;
   max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.service-area-row:hover .service-area-image img {
+  transform: scale(1.05);
 }
 
 .service-area-content {
-  padding: 1rem 2rem; /* Adds padding to text content */
+  padding: 1rem 2rem;
 }
 
 .service-area-content h3 {
@@ -304,6 +316,17 @@ section {
   font-weight: 600;
   margin-bottom: 1rem;
   color: #333;
+}
+
+.service-area-content h3 a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.service-area-content h3 a:hover {
+  color: var(--brand-2);
+  text-decoration: underline;
 }
 
 .service-area-content p {
@@ -316,7 +339,7 @@ section {
 /* Mobile responsive for service areas */
 @media (max-width: 768px) {
   .service-areas-container {
-    padding: 0 1rem; /* Less padding on mobile */
+    padding: 0 1rem;
   }
   
   .service-area-row {
@@ -332,7 +355,7 @@ section {
   
   .service-area-content {
     order: 2;
-    padding: 0.5rem 1rem; /* Less padding on mobile */
+    padding: 0.5rem 1rem;
   }
   
   .service-area-image img {
