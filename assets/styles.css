@@ -175,16 +175,15 @@ body {
 .badges { display: flex; gap: .75rem; padding: 0; margin: 1rem 0 0; list-style: none; color: #fff; justify-content: center; }
 .badges li { background: rgba(0, 0, 0, 0.4); padding: .4rem .7rem; border-radius: .5rem; border: 1px solid rgba(255, 255, 255, 0.2); }
 
-/* Mobile hero background fix */
+/* Mobile hero background fix - ONLY affects mobile */
 @media (max-width: 768px) {
   .hero {
     min-height: 50vh;
     background-attachment: scroll;
-    background-size: contain;
+    background-size: 100% 100%;
     background-position: center center;
     background-repeat: no-repeat;
   }
-}
   
   .hero-card {
     padding: 1.5rem;
@@ -197,6 +196,7 @@ body {
   .hero p {
     font-size: 0.9rem;
   }
+}
   
   .hero-cta {
     flex-direction: column;
