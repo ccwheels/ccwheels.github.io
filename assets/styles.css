@@ -261,6 +261,87 @@ section {
   text-decoration: underline;
 }
 
+/* ===== SERVICE AREAS ===== */
+.service-areas-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem; /* Adds padding to prevent text from edge */
+}
+
+.service-area-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-area-image {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.service-area-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.service-area-content {
+  padding: 1rem 2rem; /* Adds padding to text content */
+}
+
+.service-area-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.service-area-content p {
+  color: #666;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Mobile responsive for service areas */
+@media (max-width: 768px) {
+  .service-areas-container {
+    padding: 0 1rem; /* Less padding on mobile */
+  }
+  
+  .service-area-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .service-area-image {
+    order: 1;
+  }
+  
+  .service-area-content {
+    order: 2;
+    padding: 0.5rem 1rem; /* Less padding on mobile */
+  }
+  
+  .service-area-image img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 /* ===== SLIDESHOW ===== */
 .slideshow { position: relative; max-width: 1100px; margin: 0 auto; padding: 0 60px; }
 .slides { position: relative; overflow: hidden; border-radius: 1rem; box-shadow: 0 10px 40px rgba(0,0,0,.12); z-index: 1; }
