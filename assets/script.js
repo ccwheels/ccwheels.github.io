@@ -38,16 +38,19 @@ if (slideshow) {
 showSlide(0);
 startTimer();
 
-// Mobile menu toggle - more robust version
+// Mobile menu toggle
 function toggleMenu() {
   const nav = document.querySelector('nav');
   const menuToggle = document.querySelector('.menu-toggle');
   
-  if (nav && menuToggle) {
-    nav.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+  if (!nav || !menuToggle) {
+    console.error('Menu elements not found');
+    return;
   }
-} 
+  
+  nav.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+}
 
 function closeMenu() {
   const nav = document.querySelector('nav');
@@ -59,6 +62,24 @@ function closeMenu() {
   }
 }
 
+// Initialize menu on page load
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleMenu();
+    });
+  }
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      closeMenu();
+    });
+  });
+});
 
 // Also add event listener as backup
 document.addEventListener('DOMContentLoaded', function() {
