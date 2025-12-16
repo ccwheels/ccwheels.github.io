@@ -154,7 +154,7 @@ body {
   min-height: 70vh;          /* was 80vh */
   background-color: #333;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('images/Screen Shot 2025-12-09 at 7.51.41 PM.png') center/cover no-repeat fixed;
+    url('images/915.png') center/cover no-repeat fixed;
   display: grid;
   place-items: center;
   padding: 4vh 4vw;          /* was 6vh 5vw */
