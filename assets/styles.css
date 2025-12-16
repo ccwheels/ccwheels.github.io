@@ -86,15 +86,16 @@ body {
   color: #0066cc;
 }
 
-/* Mobile menu styles */
+/* Mobile hero background fix - match service-areas */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
+  .hero:not(.service-areas-hero) {
+    min-height: 50vh;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
-  
-  .navbar {
-    position: relative; /* ADD THIS LINE */
-  }
+}
   
   nav {
     position: absolute;
