@@ -151,13 +151,41 @@ body {
 
 /* ===== BUTTONS ===== */
 .btn {
-  display: inline-block; padding: .85rem 1.25rem; border-radius: .6rem;
-  background: var(--brand); color: #fff; text-decoration: none; border: 2px solid var(--brand);
-  font-weight: 700; letter-spacing: .2px;
+  display: inline-block;
+  padding: .85rem 1.25rem;
+  border-radius: .6rem;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid var(--brand);
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-align: center;
 }
-.btn:hover { filter: brightness(1.05); }
-.btn-outline { background: transparent; color: var(--brand); }
-.btn-outline:hover { background: var(--brand-2); }
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--brand);
+}
+
+.btn-outline:hover {
+  background: var(--brand-2);
+  color: #fff;
+}
+
+/* Mobile button adjustments */
+@media (max-width: 768px) {
+  .btn {
+    padding: .75rem 1.15rem;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 280px;
+  }
+}
 
 /* ===== HERO ===== */
 .hero {
