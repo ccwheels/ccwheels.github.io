@@ -35,19 +35,24 @@ if (slideshow) {
   slideshow.addEventListener('mouseleave', startTimer);
 }
 
-if (slides.length > 0) {
-  showSlide(0);
-  startTimer();
-}
+showSlide(0);
+startTimer();
 
-// Mobile menu toggle - FIXED VERSION
+// Mobile menu toggle - more robust version
 function toggleMenu() {
   const nav = document.querySelector('nav');
   const menuToggle = document.querySelector('.menu-toggle');
   
+  console.log('toggleMenu called'); // Debug line
+  console.log('nav element:', nav); // Debug line
+  console.log('menuToggle element:', menuToggle); // Debug line
+  
   if (nav && menuToggle) {
     nav.classList.toggle('active');
     menuToggle.classList.toggle('active');
+    console.log('Menu toggled, nav has active:', nav.classList.contains('active')); // Debug line
+  } else {
+    console.error('nav or menuToggle not found!'); // Debug line
   }
 }
 
@@ -61,22 +66,23 @@ function closeMenu() {
   }
 }
 
-// Initialize menu on page load
+
+// Also add event listener as backup
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('nav');
-  const navLinks = document.querySelectorAll('.nav-links a');
   
-  // Add click event to hamburger button
   if (menuToggle) {
     menuToggle.addEventListener('click', function(e) {
       e.preventDefault();
       e.stopPropagation();
+      console.log('Button clicked via event listener'); // Debug line
       toggleMenu();
     });
   }
   
   // Close menu when clicking nav links
+  const navLinks = document.querySelectorAll('.nav-links a');
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
       closeMenu();
@@ -92,8 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Contact form - FormSubmit handles submission
+// Form will redirect to FormSubmit's thank you page after submission
+
 // Footer year
-const yearElement = document.getElementById('year');
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
-}
+document.getElementById('year').textContent = new Date().getFullYear();
