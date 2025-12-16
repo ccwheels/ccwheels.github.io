@@ -106,7 +106,8 @@ body {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    z-index: 999; /* ADD THIS LINE */
+    z-index: 999; 
+  } 
   
   nav.active {
     max-height: 400px;
