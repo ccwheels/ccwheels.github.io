@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tempe Luxury Service Areas | Hett Painting Group</title>
+  <meta name="description" content="Premium interior and exterior painting for Tempe's luxury neighborhoods." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="assets/images/hpg1.png" type="image/png"/>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">
+      <img src="assets/images/hpg1.png" alt="Hett Painting Group" class="logo-img" />
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#home" onclick="closeMenu()">Home</a></li>
+        <li><a href="index.html#services-list" onclick="closeMenu()">Services</a></li>
+        <li><a href="service-areas.html" onclick="closeMenu()">Service Areas</a></li>
+        <li><a href="index.html#testimonials" onclick="closeMenu()">Testimonials</a></li>
+        <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero service-areas-hero" style="background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('assets/images/tempe.jpg') center/cover no-repeat;">
+    <div class="hero-card">
+      <h1>Tempe's Luxury Painting Group</h1>
+      <p>Premium prep, coatings, and white-glove project care for Tempe's most exclusive neighborhoods.</p>
+      <div class="hero-cta">
+        <a href="#areas" class="btn">View Neighborhoods</a>
+        <a href="index.html#contact" class="btn btn-outline">Request Estimate</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem; text-align: center; background: var(--paper-2);">
+    <a href="service-areas.html" class="btn btn-outline">← Back to All Service Areas</a>
+  </section>
+
+  <section id="areas" class="section">
+    <h2 class="section-title">Tempe Neighborhoods We Serve</h2>
+    <div class="services-grid">
+      <div class="service-item">
+        <h3><a href="https://www.google.com/maps?q=The+Lakes+Tempe+AZ" target="_blank" rel="noopener">The Lakes</a></h3>
+        <p>Luxury painting services for The Lakes' upscale communities with premium finishes and meticulous attention to detail.</p>
+      </div>
+      <div class="service-item">
+        <h3><a href="https://www.google.com/maps?q=Kiwanis+Park+Tempe+AZ" target="_blank" rel="noopener">Kiwanis Park Area</a></h3>
+        <p>Professional painting for Kiwanis Park's luxury properties with HOA-compliant finishes and premium materials.</p>
+      </div>
+      <div class="service-item">
+        <h3><a href="https://www.google.com/maps?q=Maple+Ash+Tempe+AZ" target="_blank" rel="noopener">Maple-Ash</a></h3>
+        <p>Estate-grade prep and finishes for Maple-Ash's historic and luxury homes with careful attention to architectural details.</p>
+      </div>
+      <div class="service-item">
+        <h3><a href="https://www.google.com/maps?q=West+Tempe+AZ" target="_blank" rel="noopener">West Tempe</a></h3>
+        <p>Quality painting services for West Tempe's upscale neighborhoods with professional craftsmanship and premium coatings.</p>
+      </div>
+      <div class="service-item">
+        <h3><a href="https://www.google.com/maps?q=Tempe+Town+Lake+Tempe+AZ" target="_blank" rel="noopener">Tempe Town Lake</a></h3>
+        <p>Modern interior refreshes and weather-ready exteriors for Tempe Town Lake's luxury condos and waterfront properties.</p>
+      </div>
+      <div class="service-item">
+        <h3><a href="https://www.google.com/maps?q=South+Tempe+AZ" target="_blank" rel="noopener">South Tempe</a></h3>
+        <p>Premium painting services for South Tempe's luxury communities with white-glove service and attention to detail.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <h2 class="section-title">Why Luxury Homes Choose Us</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Concierge Project Care</h3>
+        <p>Owner-available walkthroughs, daily updates, and clean job sites that respect privacy.</p>
+      </article>
+      <article class="card">
+        <h3>Finish-Quality Prep</h3>
+        <p>Elastomeric/stucco systems, fine-sanding, caulking, and priming for long-lived finishes.</p>
+      </article>
+      <article class="card">
+        <h3>Color Confidence</h3>
+        <p>Professional color consults, HOA submittal support, and sample boards before we paint.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="contact-areas">
+    <h2 class="section-title">Schedule a Luxury Paint Consultation</h2>
+    <p style="text-align:center; max-width:720px; margin: 0 auto 1.5rem;">Tell us your neighborhood, timeline, and whether it's a primary or seasonal home. We'll propose a tailored plan.</p>
+    <div class="hero-cta" style="justify-content:center;">
+      <a href="index.html#contact" class="btn">Request Estimate</a>
+      <a href="tel:4803358099" class="btn btn-outline">(480) 335-8099</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p><strong>Hett Painting Group</strong> · Licensed & Insured</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p class="footer-phone"><a href="tel:4803358099">(480) 335-8099</a></p>
+      <p>&copy; <span id="year"></span> Hett Painting Group. All rights reserved.</p>
+      <p>ROC 361446</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
