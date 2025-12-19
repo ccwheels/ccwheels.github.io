@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exterior Painting Services | Hett Painting Group</title>
+  <meta name="description" content="Professional exterior painting services in Phoenix metro. Premium prep, coatings, and finishes engineered for Arizona heat. Free estimates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="assets/images/hpg1.png" type="image/png"/>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">
+      <img src="assets/images/hpg1.png" alt="Hett Painting Group" class="logo-img" />
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#home" onclick="closeMenu()">Home</a></li>
+        <li><a href="index.html#services-list" onclick="closeMenu()">Services</a></li>
+        <li><a href="service-areas.html" onclick="closeMenu()">Service Areas</a></li>
+        <li><a href="index.html#testimonials" onclick="closeMenu()">Testimonials</a></li>
+        <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/Exteriorpaint.png') center/cover no-repeat;">
+    <div class="hero-card">
+      <h1>Exterior Painting Services</h1>
+      <p>Boost curb appeal and protect your home with premium exterior finishes engineered for Arizona heat.</p>
+      <div class="hero-cta">
+        <a href="index.html#contact" class="btn">Get Free Estimate</a>
+        <a href="tel:4803358099" class="btn btn-outline">(480) 335-8099</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem; text-align: center; background: var(--paper-2);">
+    <a href="index.html#services-list" class="btn btn-outline">← Back to All Services</a>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Complete Exterior Painting Solutions</h2>
+    <div class="services-container">
+      <div class="service-row">
+        <div class="service-image">
+          <img src="assets/images/Exteriorpaint.png" alt="Exterior Painting">
+        </div>
+        <div class="service-content">
+          <h3>Premium Exterior Repaints</h3>
+          <p>We handle everything from prep to cleanup with long-lasting finishes engineered specifically for Arizona's harsh climate. Our exterior painting process includes:</p>
+          <ul style="text-align: left; color: #666; line-height: 1.8;">
+            <li>Thorough surface preparation and repairs</li>
+            <li>Premium elastomeric and stucco systems</li>
+            <li>UV-resistant coatings for maximum durability</li>
+            <li>HOA-compliant color consultation</li>
+            <li>Clean job sites and daily updates</li>
+            <li>5-year guarantee on all work</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <h2 class="section-title">Why Choose Us for Exterior Painting</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon"><i class="fas fa-sun"></i></div>
+        <h3>Arizona-Engineered Finishes</h3>
+        <p>Our coatings are specifically selected to withstand intense sun, heat, and monsoon weather conditions.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon"><i class="fas fa-tools"></i></div>
+        <h3>Meticulous Prep Work</h3>
+        <p>Proper preparation is the foundation of a long-lasting paint job. We never cut corners on prep.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Everything-Is-Covered Guarantee</h3>
+        <p>If anything doesn't look right within 5 years, we fix it. No paperwork, no arguing—just results.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2 class="section-title">Ready to Transform Your Home's Exterior?</h2>
+    <p style="text-align:center; max-width:720px; margin: 0 auto 1.5rem;">Get a free estimate for your exterior painting project. We'll assess your home and provide a detailed quote.</p>
+    <div class="hero-cta" style="justify-content:center;">
+      <a href="index.html#contact" class="btn">Request Free Estimate</a>
+      <a href="tel:4803358099" class="btn btn-outline">(480) 335-8099</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p><strong>Hett Painting Group</strong> · Licensed & Insured</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p class="footer-phone"><a href="tel:4803358099">(480) 335-8099</a></p>
+      <p>&copy; <span id="year"></span> Hett Painting Group. All rights reserved.</p>
+      <p>ROC 361446</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
