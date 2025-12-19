@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interior Painting Services | Hett Painting Group</title>
+  <meta name="description" content="Professional interior painting services in Phoenix metro. Detail-driven finishes, dust control, and clean job sites. Free estimates." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="assets/images/hpg1.png" type="image/png"/>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">
+      <img src="assets/images/hpg1.png" alt="Hett Painting Group" class="logo-img" />
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html#home" onclick="closeMenu()">Home</a></li>
+        <li><a href="index.html#services-list" onclick="closeMenu()">Services</a></li>
+        <li><a href="service-areas.html" onclick="closeMenu()">Service Areas</a></li>
+        <li><a href="index.html#testimonials" onclick="closeMenu()">Testimonials</a></li>
+        <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/Interiorpaint.png') center/cover no-repeat;">
+    <div class="hero-card">
+      <h1>Interior Painting Services</h1>
+      <p>Transform your space with detail-driven interior painting and smooth, professional finishes.</p>
+      <div class="hero-cta">
+        <a href="index.html#contact" class="btn">Get Free Estimate</a>
+        <a href="tel:4803358099" class="btn btn-outline">(480) 335-8099</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 1rem 2rem; text-align: center; background: var(--paper-2);">
+    <a href="index.html#services-list" class="btn btn-outline">← Back to All Services</a>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Complete Interior Painting Solutions</h2>
+    <div class="services-container">
+      <div class="service-row">
+        <div class="service-image">
+          <img src="assets/images/Interiorpaint.png" alt="Interior Painting">
+        </div>
+        <div class="service-content">
+          <h3>Premium Interior Finishes</h3>
+          <p>We focus on clean lines, smooth finishes, and protecting your home like it's our own. Our interior painting process includes:</p>
+          <ul style="text-align: left; color: #666; line-height: 1.8;">
+            <li>Comprehensive dust control and protection</li>
+            <li>Fine-sanding and surface preparation</li>
+            <li>Premium paint selection and color consultation</li>
+            <li>Clean lines and smooth, even finishes</li>
+            <li>Minimal disruption to your daily life</li>
+            <li>Complete cleanup and furniture replacement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <h2 class="section-title">Why Choose Us for Interior Painting</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="card-icon"><i class="fas fa-broom"></i></div>
+        <h3>Dust Control & Clean Job Sites</h3>
+        <p>We protect your furniture, floors, and belongings. You'll come home to a clean, finished space.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon"><i class="fas fa-palette"></i></div>
+        <h3>Color Consultation</h3>
+        <p>Professional color advice to help you choose the perfect palette for your home's style and lighting.</p>
+      </article>
+      <article class="card">
+        <div class="card-icon"><i class="fas fa-clock"></i></div>
+        <h3>Fast, Efficient Service</h3>
+        <p>Whether a single room or full repaint, we complete projects on time with minimal disruption.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2 class="section-title">Ready to Transform Your Interior?</h2>
+    <p style="text-align:center; max-width:720px; margin: 0 auto 1.5rem;">Get a free estimate for your interior painting project. We'll help you choose colors and create a timeline.</p>
+    <div class="hero-cta" style="justify-content:center;">
+      <a href="index.html#contact" class="btn">Request Free Estimate</a>
+      <a href="tel:4803358099" class="btn btn-outline">(480) 335-8099</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p><strong>Hett Painting Group</strong> · Licensed & Insured</p>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <p class="footer-phone"><a href="tel:4803358099">(480) 335-8099</a></p>
+      <p>&copy; <span id="year"></span> Hett Painting Group. All rights reserved.</p>
+      <p>ROC 361446</p>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
