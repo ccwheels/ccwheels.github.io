@@ -83,7 +83,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #0066cc;
+  color: var(--brand);
 }
 
 /* Mobile menu styles - MUST be inside media query */
