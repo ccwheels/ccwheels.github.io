@@ -541,6 +541,17 @@ figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 1rem 1.2
   font-size: 1rem;
 }
 
+h3 a {
+  color: var(#b28735);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+h3 a:hover {
+  color: var(#7d5f25);
+  text-decoration: underline;
+}
+
 /* Mobile responsive - stack vertically */
 @media (max-width: 768px) {
   .service-row {
