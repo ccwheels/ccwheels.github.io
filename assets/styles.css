@@ -19,6 +19,29 @@ body {
   line-height: 1.6;
 }
 
+h3 a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+h3 a:hover {
+  color: var(--brand-2);
+  text-decoration: underline;
+}
+
+/* General h3 link styling */
+h3 a {
+  color: var(--brand);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+h3 a:hover {
+  color: var(--brand-2);
+  text-decoration: underline;
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
