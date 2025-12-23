@@ -607,20 +607,34 @@ h3 a:hover {
 .dot { width: 10px; height: 10px; border-radius: 50%; background: #c7cfe1; border: 0; cursor: pointer; }
 .dot.active { background: var(--brand); }
 
-/* Simplified testimonials */
-.testimonials-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  max-width: 1100px;
+/* Text-only testimonial slides */
+.slideshow.text-only {
+  position: relative;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 0 40px;
 }
 
-.testimonial-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1.5rem;
+.slides {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+  animation: fade .6s ease-in-out;
+}
+
+.testimonial-text-slide {
+  padding: 2rem;
+  text-align: left;
   display: grid;
   gap: 0.75rem;
 }
@@ -630,43 +644,30 @@ h3 a:hover {
   font-size: 1rem;
 }
 
-.testimonial-quote {
+.testimonial-text-slide p {
   margin: 0;
   color: #333;
   line-height: 1.6;
 }
 
-.testimonial-name {
-  margin: 0;
+.testimonial-text-slide cite {
+  font-style: normal;
   font-weight: 700;
   color: #555;
 }
 
+/* Reuse existing nav/dots styles; tweak positioning for text-only */
+.slide-nav.prev { left: -35px; }
+.slide-nav.next { right: -35px; }
+.dots { margin-top: 1rem; }
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .testimonial-card {
-    padding: 1.25rem;
-  }
-  .testimonial-quote {
-    font-size: 0.95rem;
-  }
+  .slideshow.text-only { padding: 0 15px; }
+  .testimonial-text-slide { padding: 1.5rem; }
+  .slide-nav.prev { left: -10px; }
+  .slide-nav.next { right: -10px; }
 }
-
-/* ===== FORM ===== */
-.form { max-width: 900px; margin: 0 auto; }
-.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-.form-group { display: grid; gap: .45rem; font-weight: 600; color: var(--ink); }
-.form input, .form textarea {
-  width: 100%; padding: .85rem 1rem; border-radius: .65rem; border: 1.5px solid #e0e5f2;
-  outline: none; font: inherit; transition: box-shadow .2s, border-color .2s;
-}
-.form input:focus, .form textarea:focus { border-color: var(--brand); box-shadow: 0 0 0 4px var(--ring); }
-.form textarea { min-height: 140px; resize: vertical; }
-.form .btn { margin-top: 1.25rem; }
-.note { color: var(--muted); margin-top: .75rem; }
-.muted { color: var(--muted); }
-.small { font-size: .9rem; }
-.span-2 { grid-column: span 2; }
 
 /* ===== LOGIN ===== */
 .login-body { display: grid; place-items: center; min-height: 100vh; background: var(--paper-2); }
