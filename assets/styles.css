@@ -607,6 +607,51 @@ h3 a:hover {
 .dot { width: 10px; height: 10px; border-radius: 50%; background: #c7cfe1; border: 0; cursor: pointer; }
 .dot.active { background: var(--brand); }
 
+/* Simplified testimonials */
+.testimonials-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.stars {
+  color: var(--brand);
+  font-size: 1rem;
+}
+
+.testimonial-quote {
+  margin: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+.testimonial-name {
+  margin: 0;
+  font-weight: 700;
+  color: #555;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .testimonial-card {
+    padding: 1.25rem;
+  }
+  .testimonial-quote {
+    font-size: 0.95rem;
+  }
+}
+
 /* ===== FORM ===== */
 .form { max-width: 900px; margin: 0 auto; }
 .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
