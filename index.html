@@ -241,41 +241,72 @@
 <section id="testimonials" class="section">
   <h2 class="section-title">Testimonials</h2>
 
-  <div class="testimonials-grid">
-    <article class="testimonial-card">
-      <div class="stars">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-      </div>
-      <p class="testimonial-quote">"Hett Painting Group transformed our home! The attention to detail was incredible, every edge was perfect, and they kept the space spotless."</p>
-      <p class="testimonial-name">— Chelsea T</p>
-    </article>
+  <div class="slideshow text-only">
+    <button type="button" class="slide-nav prev" aria-label="Previous testimonial" onclick="changeSlide(-1)">❮</button>
 
-    <article class="testimonial-card">
-      <div class="stars">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-      </div>
-      <p class="testimonial-quote">"Professional from start to finish. They showed up on time every day, communicated clearly, and the quality exceeded expectations."</p>
-      <p class="testimonial-name">— Damian</p>
-    </article>
+    <div class="slides">
+      <figure class="slide active testimonial-text-slide">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"Hett Painting Group transformed our home! The attention to detail was incredible—every edge was perfect, and they kept the space spotless."</p>
+        <cite>— Maria</cite>
+      </figure>
 
-    <article class="testimonial-card">
-      <div class="stars">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-      </div>
-      <p class="testimonial-quote">"Trevor and Jesus showed up on time every day and even setn video updates to keep us informed. Finally a contractor I would actually reommend."</p>
-      <p class="testimonial-name">— Lisa P</p>
-    </article>
+      <figure class="slide testimonial-text-slide">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"Professional from start to finish. They showed up on time every day, communicated clearly, and the quality exceeded expectations."</p>
+        <cite>— Damian</cite>
+      </figure>
 
-        <article class="testimonial-card">
-      <div class="stars">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-      </div>
-      <p class="testimonial-quote">"Excellent work, great communication, and very professional. Their paint job looks fantastic and was completed on schedule. Highly recommend Hett Painting for any painting needs! Thank you again!!"</p>
-      <p class="testimonial-name">— Marcella G</p>
-    </article>
+      <figure class="slide testimonial-text-slide">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"They helped us choose the perfect colors and the finish is beautiful. Our home feels brand new. Worth every penny."</p>
+        <cite>— Lisa</cite>
+      </figure>
+
+      <!-- New slides -->
+      <figure class="slide testimonial-text-slide">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"Meticulous prep and spotless cleanup. The crew was courteous, fast, and the exterior looks fantastic."</p>
+        <cite>— Jordan</cite>
+      </figure>
+
+      <figure class="slide testimonial-text-slide">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"Clear communication, fair pricing, and they finished early. The daily updates made the process stress-free."</p>
+        <cite>— Avery</cite>
+      </figure>
+
+      <figure class="slide testimonial-text-slide">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p>"Our office repaint happened after hours with zero disruption. The finish is flawless and the team was great to work with."</p>
+        <cite>— Sam</cite>
+      </figure>
+    </div>
+
+    <button type="button" class="slide-nav next" aria-label="Next testimonial" onclick="changeSlide(1)">❯</button>
+  </div>
+
+  <div class="dots" role="tablist" aria-label="Testimonial slides">
+    <button type="button" class="dot active" onclick="currentSlide(0)" aria-label="Slide 1"></button>
+    <button type="button" class="dot" onclick="currentSlide(1)" aria-label="Slide 2"></button>
+    <button type="button" class="dot" onclick="currentSlide(2)" aria-label="Slide 3"></button>
+    <button type="button" class="dot" onclick="currentSlide(3)" aria-label="Slide 4"></button>
+    <button type="button" class="dot" onclick="currentSlide(4)" aria-label="Slide 5"></button>
+    <button type="button" class="dot" onclick="currentSlide(5)" aria-label="Slide 6"></button>
   </div>
 </section>
-
 
   <!-- ==================== CONTACT ==================== -->
 
