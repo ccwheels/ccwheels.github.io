@@ -669,6 +669,47 @@ h3 a:hover {
   .slide-nav.next { right: -10px; }
 }
 
+/* Featured booking button - bigger and special */
+.btn-featured {
+  font-size: 1.15rem !important;
+  padding: 1rem 2rem !important;
+  box-shadow: 0 8px 20px rgba(178, 135, 53, 0.4) !important;
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-featured:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(178, 135, 53, 0.5) !important;
+}
+
+.btn-featured:hover::before {
+  left: 100%;
+}
+
+/* Mobile adjustments for featured button */
+@media (max-width: 768px) {
+  .btn-featured {
+    font-size: 1.05rem !important;
+    padding: 0.9rem 1.75rem !important;
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
 /* ===== LOGIN ===== */
 .login-body { display: grid; place-items: center; min-height: 100vh; background: var(--paper-2); }
 .login-card { background: #fff; padding: 2rem; width: min(92vw, 400px); border-radius: 1rem; box-shadow: 0 20px 60px rgba(0,0,0,.12); text-align: center; }
