@@ -669,42 +669,6 @@ h3 a:hover {
   .slide-nav.next { right: -10px; }
 }
 
-/* Housecallpro booking button styling */
-.hcp-button {
-  display: inline-block;
-  padding: .85rem 1.25rem;
-  border-radius: .6rem;
-  background: var(--brand);
-  color: #fff;
-  text-decoration: none;
-  border: 2px solid var(--brand);
-  font-weight: 700;
-  letter-spacing: .2px;
-  text-align: center;
-  cursor: pointer;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-size: 1rem;
-  transition: filter 0.3s;
-}
-
-.hcp-button:hover {
-  filter: brightness(1.05);
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .hcp-button {
-    padding: .75rem 1.15rem;
-    font-size: 0.95rem;
-    width: 100%;
-    max-width: 280px;
-  }
-  
-  .hero-cta .hcp-button {
-    margin: 0;
-  }
-}
-
 /* ===== LOGIN ===== */
 .login-body { display: grid; place-items: center; min-height: 100vh; background: var(--paper-2); }
 .login-card { background: #fff; padding: 2rem; width: min(92vw, 400px); border-radius: 1rem; box-shadow: 0 20px 60px rgba(0,0,0,.12); text-align: center; }
