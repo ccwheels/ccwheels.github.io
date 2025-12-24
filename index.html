@@ -56,6 +56,8 @@
 
   <link rel="icon" href="assets/images/hpg1.png" type="image/png"/>
 
+  <script async src="https://online-booking.housecallpro.com/script.js?token=03f9b3d242034807a562ba24b6278aa1&orgName=Hett-Painting-Group"></script>
+
 </head>
 
 <body>
@@ -116,15 +118,11 @@
 
       <p>Exterior and interior painting done in a way your mom would love. Prep done right, no hidden fees, no contractor nonsense.</p>
 
-      <div class="hero-cta">
-
-        <a href="#contact" class="btn">Free In-Person Estimate</a>
-
-        <a href="virtual-estimate.html" class="btn">Or Save Time with a Virtual Bid</a>
-
-      <div class="hero-cta">       
-
-        <a href="#testimonials" class="btn">Read Reviews</a>
+<div class="hero-cta">
+  <a href="#testimonials" class="btn btn-outline">Read Reviews</a>
+  <a href="virtual-estimate.html" class="btn btn-outline">Learn More: Virtual Bids</a>
+  <button data-token="03f9b3d242034807a562ba24b6278aa1" data-orgname="Hett-Painting-Group" class="hcp-button btn" onClick="HCPWidget.openModal()">Book Online</button>
+</div>
 
       </div>
 
@@ -311,10 +309,19 @@
   <!-- ==================== CONTACT ==================== -->
 
   <section id="contact" class="section light">
-
-    <h2 class="section-title">Get Your Free Estimate</h2>
-
-    <form id="contactForm" class="form" action="https://formsubmit.co/sam@hettpaintinggroup.com" method="POST">
+    
+  <h2 class="section-title">Get Your Free Estimate</h2>
+  
+  <div style="text-align: center; margin-bottom: 2rem;">
+    <button data-token="03f9b3d242034807a562ba24b6278aa1" data-orgname="Hett-Painting-Group" class="hcp-button btn" onClick="HCPWidget.openModal()">Book Online Appointment</button>
+  </div>
+  
+  <p style="text-align: center; margin-bottom: 1.5rem; color: var(--muted);">Or fill out the form below:</p>
+  
+  <form id="contactForm" class="form" action="https://formsubmit.co/sam@hettpaintinggroup.com" method="POST">
+    <!-- your form -->
+  </form>
+</section>
 
       <!-- FormSubmit Configuration -->
 
