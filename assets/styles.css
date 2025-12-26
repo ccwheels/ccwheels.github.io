@@ -797,114 +797,6 @@ figcaption {
   }
 }
 
-/* ===== TESTIMONIAL SLIDES ===== */
-.testimonial-slide {
-  position: relative;
-}
-
-.testimonial-bg {
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
-  display: block;
-}
-
-.testimonial-person {
-  position: absolute !important;
-  bottom: 20px !important;
-  left: 20px !important;
-  width: 80px !important;
-  height: 80px !important;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #fff;
-  box-shadow: 0 4px 15px rgba(0,0,0,.3);
-  z-index: 2;
-}
-
-.testimonial-quote {
-  position: absolute;
-  bottom: 20px;
-  left: 115px;
-  right: 20px;
-  background: rgba(0, 0, 0, 0.75);
-  padding: 1.25rem 1.5rem;
-  border-radius: .75rem;
-  text-align: left;
-  color: #fff;
-  z-index: 1;
-}
-
-.testimonial-quote p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0 0 .5rem 0;
-  font-style: italic;
-}
-
-.testimonial-quote cite {
-  font-size: .95rem;
-  font-weight: 600;
-  font-style: normal;
-  color: var(--brand);
-}
-
-.slide-nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,.6);
-  color: #fff;
-  border: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  font-size: 1.2rem;
-  z-index: 20;
-  transition: background .2s, transform .2s;
-  user-select: none;
-}
-
-.slide-nav:hover {
-  background: rgba(0,0,0,.8);
-  transform: translateY(-50%) scale(1.1);
-}
-
-.slide-nav:active {
-  transform: translateY(-50%) scale(0.95);
-}
-
-.slide-nav.prev {
-  left: -55px;
-}
-
-.slide-nav.next {
-  right: -55px;
-}
-
-.dots {
-  display: flex;
-  gap: .5rem;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #c7cfe1;
-  border: 0;
-  cursor: pointer;
-}
-
-.dot.active {
-  background: var(--brand);
-}
-
 /* Text-only testimonial slides */
 .slideshow.text-only {
   position: relative;
@@ -917,6 +809,23 @@ figcaption {
   border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   background: #fff;
+  position: relative;
+  min-height: 200px;
+}
+
+.slide {
+  display: none;
+  position: relative;
+}
+
+.slide.active {
+  display: block;
+  animation: fade .6s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .testimonial-text-slide {
@@ -941,14 +850,6 @@ figcaption {
   font-style: normal;
   font-weight: 700;
   color: #555;
-}
-
-.slideshow.text-only .slide-nav.prev {
-  left: -35px;
-}
-
-.slideshow.text-only .slide-nav.next {
-  right: -35px;
 }
 
 /* Mobile adjustments for testimonials */
@@ -979,6 +880,15 @@ figcaption {
   
   .slide-nav.next {
     right: -15px;
+  }
+  
+  /* Ensure only one slide shows on mobile */
+  .slide {
+    display: none !important;
+  }
+  
+  .slide.active {
+    display: block !important;
   }
   
   .slide img {
