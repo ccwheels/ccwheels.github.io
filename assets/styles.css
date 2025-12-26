@@ -348,7 +348,7 @@ h3 a:hover {
 .hero {
   margin-top: 60px;
   min-height: 70vh;
-  background-color: #333;
+  background-color: transparent;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('assets/images/Whyworry.png') center/cover no-repeat fixed;
   display: grid;
@@ -404,16 +404,20 @@ h3 a:hover {
   .hero {
     margin-top: 0;
     min-height: 50vh;
-    background-attachment: scroll;
-    background-size: 100% auto !important;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: #333 !important;
-    padding: 3vh 4vw;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-color: transparent !important;
+    padding: 0;
+    display: grid;
+    place-items: center;
   }
   
   .hero-card {
     padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
   }
   
   .hero h1 {
@@ -446,12 +450,16 @@ h3 a:hover {
   min-height: 70vh !important;
   background-size: cover !important;
   background-position: center center !important;
+  background-color: transparent !important;
 }
 
 @media (max-width: 768px) {
   .service-areas-hero {
     min-height: 50vh !important;
     background-attachment: scroll !important;
+    background-size: cover !important;
+    background-color: transparent !important;
+    padding: 0;
   }
 }
 
