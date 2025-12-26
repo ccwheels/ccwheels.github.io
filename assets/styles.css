@@ -378,21 +378,39 @@ h3 a:hover {
 @media (max-width: 768px) {
   .hero {
     margin-top: 0;
-    min-height: 50vh;
+    min-height: 60vh;
     background-attachment: scroll !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
     background-color: transparent !important;
-    padding: 0;
+    padding: 2vh 4vw 4vh 4vw;
     display: grid;
     place-items: center;
+    align-content: center;
+    position: relative;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background-image: url('assets/images/hpg1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 10;
   }
   
   .hero-card {
     padding: 1.5rem;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
+    margin-top: 90px;
   }
   
   .hero h1 {
