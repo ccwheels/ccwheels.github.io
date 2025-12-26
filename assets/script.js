@@ -10,8 +10,8 @@ function showSlide(i) {
   else current = i;
   slides.forEach(s => s.classList.remove('active'));
   dots.forEach(d => d.classList.remove('active'));
-  if (slides[current]) slides[current].classList.add('active');
-  if (dots[current]) dots[current].classList.add('active');
+  slides[current].classList.add('active');
+  dots[current].classList.add('active');
 }
 
 function changeSlide(step) {
@@ -35,38 +35,29 @@ if (slideshow) {
   slideshow.addEventListener('mouseleave', startTimer);
 }
 
-if (slides.length > 0) {
-  showSlide(0);
-  startTimer();
-}
+showSlide(0);
+startTimer();
 
 // Mobile menu toggle
 function toggleMenu() {
   const nav = document.querySelector('nav');
   const menuToggle = document.querySelector('.menu-toggle');
   
-  if (!nav) {
+  if (!nav || !menuToggle) {
+    console.error('Menu elements not found');
     return;
   }
   
   nav.classList.toggle('active');
-  document.body.classList.toggle('menu-open');
-  
-  if (menuToggle) {
-    menuToggle.classList.toggle('active');
-  }
+  menuToggle.classList.toggle('active');
 }
 
 function closeMenu() {
   const nav = document.querySelector('nav');
   const menuToggle = document.querySelector('.menu-toggle');
   
-  if (nav) {
+  if (nav && menuToggle) {
     nav.classList.remove('active');
-    document.body.classList.remove('menu-open');
-  }
-  
-  if (menuToggle) {
     menuToggle.classList.remove('active');
   }
 }
@@ -88,23 +79,40 @@ document.addEventListener('DOMContentLoaded', function() {
       closeMenu();
     });
   });
+});
+
+// Also add event listener as backup
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+  
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleMenu();
+    });
+  }
+  
+  // Close menu when clicking nav links
+  const navLinks = document.querySelectorAll('.nav-links a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      closeMenu();
+    });
+  });
   
   // Close menu when clicking outside
   document.addEventListener('click', function(event) {
-    const nav = document.querySelector('nav');
-    if (nav && nav.classList.contains('active')) {
-      const clickedInsideNav = nav.contains(event.target);
-      const clickedToggle = (menuToggle && menuToggle.contains(event.target));
-      
-      if (!clickedInsideNav && !clickedToggle) {
-        closeMenu();
-      }
+    const navbar = document.querySelector('.navbar');
+    if (navbar && nav && !navbar.contains(event.target) && nav.classList.contains('active')) {
+      closeMenu();
     }
   });
 });
 
+// Contact form - FormSubmit handles submission
+// Form will redirect to FormSubmit's thank you page after submission
+
 // Footer year
-const yearElement = document.getElementById('year');
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
-}
+document.getElementById('year').textContent = new Date().getFullYear();
