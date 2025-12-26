@@ -10,8 +10,8 @@ function showSlide(i) {
   else current = i;
   slides.forEach(s => s.classList.remove('active'));
   dots.forEach(d => d.classList.remove('active'));
-  slides[current].classList.add('active');
-  dots[current].classList.add('active');
+  if (slides[current]) slides[current].classList.add('active');
+  if (dots[current]) dots[current].classList.add('active');
 }
 
 function changeSlide(step) {
@@ -35,65 +35,49 @@ if (slideshow) {
   slideshow.addEventListener('mouseleave', startTimer);
 }
 
-showSlide(0);
-startTimer();
+if (slides.length > 0) {
+  showSlide(0);
+  startTimer();
+}
 
 // Mobile menu toggle
 function toggleMenu() {
   const nav = document.querySelector('nav');
-  const menuToggle = document.querySelector('.menu-toggle');
+  const body = document.body;
   
-  if (!nav || !menuToggle) {
-    console.error('Menu elements not found');
+  if (!nav) {
     return;
   }
   
   nav.classList.toggle('active');
-  menuToggle.classList.toggle('active');
+  body.classList.toggle('menu-open');
+  
+  const menuToggle = document.querySelector('.menu-toggle');
+  if (menuToggle) {
+    menuToggle.classList.toggle('active');
+  }
 }
 
 function closeMenu() {
   const nav = document.querySelector('nav');
-  const menuToggle = document.querySelector('.menu-toggle');
+  const body = document.body;
   
-  if (nav && menuToggle) {
+  if (nav) {
     nav.classList.remove('active');
+  }
+  
+  if (body) {
+    body.classList.remove('menu-open');
+  }
+  
+  const menuToggle = document.querySelector('.menu-toggle');
+  if (menuToggle) {
     menuToggle.classList.remove('active');
   }
 }
 
-// Initialize menu on page load
+// Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  
-  if (menuToggle) {
-    menuToggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      toggleMenu();
-    });
-  }
-  
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      closeMenu();
-    });
-  });
-});
-
-// Also add event listener as backup
-document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('nav');
-  
-  if (menuToggle) {
-    menuToggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleMenu();
-    });
-  }
-  
   // Close menu when clicking nav links
   const navLinks = document.querySelectorAll('.nav-links a');
   navLinks.forEach(link => {
@@ -102,17 +86,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Close menu when clicking outside
+  // Close menu when clicking outside nav
   document.addEventListener('click', function(event) {
-    const navbar = document.querySelector('.navbar');
-    if (navbar && nav && !navbar.contains(event.target) && nav.classList.contains('active')) {
-      closeMenu();
+    const nav = document.querySelector('nav');
+    if (nav && nav.classList.contains('active')) {
+      if (!nav.contains(event.target)) {
+        const isMenuButton = event.target.closest('.menu-toggle') || 
+                             event.target.closest('#bottom-menu-toggle') ||
+                             event.target.closest('.mobile-nav-item');
+        if (!isMenuButton) {
+          closeMenu();
+        }
+      }
     }
   });
 });
 
-// Contact form - FormSubmit handles submission
-// Form will redirect to FormSubmit's thank you page after submission
-
 // Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearElement = document.getElementById('year');
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
