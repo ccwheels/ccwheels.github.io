@@ -181,6 +181,63 @@ h3 a:hover {
   }
 }
 
+/* Mobile menu - positioned from top when triggered by bottom nav */
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    z-index: 9998;
+    width: 100%;
+  }
+  
+  nav.active {
+    max-height: 500px;
+    padding-top: 1rem;
+  }
+  
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 0 1rem 0;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    width: 100%;
+  }
+  
+  .nav-links a {
+    display: block;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+  }
+   
+  .nav-links a:hover {
+    background: #f9f9f9;
+    color: var(--brand);
+  }
+  
+  /* Add overlay when menu is open */
+  body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9997;
+  }
+}
+
 /* ===== BUTTONS ===== */
 .btn {
   display: inline-block;
