@@ -1108,3 +1108,22 @@ figcaption {
     font-size: .95rem;
   }
 }
+
+/* FORCE BOTTOM NAV TO SHOW ON MOBILE */
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: grid !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: #fff !important;
+    border-top: 1px solid #e0e0e0 !important;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1) !important;
+    z-index: 99999 !important;
+    padding: 0.5rem 0 !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    align-items: center !important;
+  }
+}
