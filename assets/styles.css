@@ -98,6 +98,25 @@ h3 a:hover {
   color: var(--brand);
 }
 
+/* Navbar book online button */
+.nav-book-btn {
+  padding: 0.5rem 1rem !important;
+  font-size: 0.9rem !important;
+  margin: 0 !important;
+}
+
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .nav-book-btn {
+    display: none !important;
+  }
+}
+
 /* Mobile menu styles - hide navbar on mobile */
 @media (max-width: 768px) {
   .navbar {
