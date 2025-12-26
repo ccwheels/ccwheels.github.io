@@ -64,7 +64,9 @@ function closeMenu() {
     nav.classList.remove('active');
   }
   
-  document.body.classList.remove('menu-open');
+  if (document.body) {
+    document.body.classList.remove('menu-open');
+  }
   
   const menuToggle = document.querySelector('.menu-toggle');
   if (menuToggle) {
@@ -76,12 +78,10 @@ function closeMenu() {
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelectorAll('.nav-links a');
-  const nav = document.querySelector('nav');
   
   if (menuToggle) {
     menuToggle.addEventListener('click', function(e) {
       e.preventDefault();
-      e.stopPropagation();
       toggleMenu();
     });
   }
@@ -92,8 +92,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Close menu when clicking outside (works for mobile too)
+  // Close menu when clicking outside
   document.addEventListener('click', function(event) {
+    const nav = document.querySelector('nav');
     if (nav && nav.classList.contains('active')) {
       const clickedInsideNav = nav.contains(event.target);
       const clickedOnToggle = (menuToggle && menuToggle.contains(event.target)) ||
