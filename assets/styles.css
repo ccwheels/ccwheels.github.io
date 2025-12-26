@@ -1104,3 +1104,15 @@ figcaption {
     font-size: .95rem;
   }
 }
+
+/* FORCE TEST - Remove after testing */
+.mobile-bottom-nav {
+  display: grid !important;
+  background: red !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 99999 !important;
+  height: 70px !important;
+}
