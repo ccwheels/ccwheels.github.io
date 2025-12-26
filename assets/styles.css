@@ -170,6 +170,27 @@ h3 a:hover {
   outline: none;
 }
 
+/* Show on mobile only */
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: grid !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    top: auto !important;
+  }
+  
+  body {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+}
+
 /* Hide bottom nav on desktop */
 @media (min-width: 769px) {
   .mobile-bottom-nav {
@@ -1103,16 +1124,4 @@ figcaption {
     gap: .85rem;
     font-size: .95rem;
   }
-}
-
-/* FORCE TEST - Remove after testing */
-.mobile-bottom-nav {
-  display: grid !important;
-  background: red !important;
-  position: fixed !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  z-index: 99999 !important;
-  height: 70px !important;
 }
