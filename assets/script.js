@@ -43,16 +43,15 @@ if (slides.length > 0) {
 // Mobile menu toggle
 function toggleMenu() {
   const nav = document.querySelector('nav');
-  const body = document.body;
+  const menuToggle = document.querySelector('.menu-toggle');
   
   if (!nav) {
     return;
   }
   
   nav.classList.toggle('active');
-  body.classList.toggle('menu-open');
+  document.body.classList.toggle('menu-open');
   
-  const menuToggle = document.querySelector('.menu-toggle');
   if (menuToggle) {
     menuToggle.classList.toggle('active');
   }
@@ -60,43 +59,45 @@ function toggleMenu() {
 
 function closeMenu() {
   const nav = document.querySelector('nav');
-  const body = document.body;
+  const menuToggle = document.querySelector('.menu-toggle');
   
   if (nav) {
     nav.classList.remove('active');
+    document.body.classList.remove('menu-open');
   }
   
-  if (body) {
-    body.classList.remove('menu-open');
-  }
-  
-  const menuToggle = document.querySelector('.menu-toggle');
   if (menuToggle) {
     menuToggle.classList.remove('active');
   }
 }
 
-// Initialize on page load
+// Initialize menu on page load
 document.addEventListener('DOMContentLoaded', function() {
-  // Close menu when clicking nav links
+  const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelectorAll('.nav-links a');
+  
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleMenu();
+    });
+  }
+  
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
       closeMenu();
     });
   });
   
-  // Close menu when clicking outside nav
+  // Close menu when clicking outside
   document.addEventListener('click', function(event) {
     const nav = document.querySelector('nav');
     if (nav && nav.classList.contains('active')) {
-      if (!nav.contains(event.target)) {
-        const isMenuButton = event.target.closest('.menu-toggle') || 
-                             event.target.closest('#bottom-menu-toggle') ||
-                             event.target.closest('.mobile-nav-item');
-        if (!isMenuButton) {
-          closeMenu();
-        }
+      const clickedInsideNav = nav.contains(event.target);
+      const clickedToggle = (menuToggle && menuToggle.contains(event.target));
+      
+      if (!clickedInsideNav && !clickedToggle) {
+        closeMenu();
       }
     }
   });
