@@ -835,3 +835,8 @@ h3 a:hover {
     font-size: 1.5rem;
   }
 }
+
+.mobile-bottom-nav {
+  display: grid !important;
+  background: red !important; /* Temporary - to see if it's there */
+}
