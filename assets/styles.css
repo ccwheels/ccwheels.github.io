@@ -806,10 +806,11 @@ figcaption {
 }
 
 .slideshow.text-only .slides {
+  position: relative;
+  overflow: hidden;
   border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   background: #fff;
-  position: relative;
   min-height: 200px;
 }
 
@@ -844,15 +845,76 @@ figcaption {
   margin: 0;
   color: #333;
   line-height: 1.6;
+  font-size: 1rem;
 }
 
 .testimonial-text-slide cite {
   font-style: normal;
   font-weight: 700;
   color: #555;
+  font-size: 0.95rem;
 }
 
-/* Mobile adjustments for testimonials */
+/* Slide navigation arrows for text-only slideshow */
+.slideshow.text-only .slide-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,.6);
+  color: #fff;
+  border: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  z-index: 20;
+  transition: background .2s, transform .2s;
+  user-select: none;
+}
+
+.slideshow.text-only .slide-nav:hover {
+  background: rgba(0,0,0,.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slideshow.text-only .slide-nav:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.slideshow.text-only .slide-nav.prev {
+  left: -35px;
+}
+
+.slideshow.text-only .slide-nav.next {
+  right: -35px;
+}
+
+/* Dots for text-only slideshow */
+.dots {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c7cfe1;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dots .dot.active {
+  background: var(--brand);
+}
+
+/* Mobile adjustments for text-only testimonials */
 @media (max-width: 768px) {
   .slideshow.text-only {
     padding: 0 15px;
@@ -862,60 +924,26 @@ figcaption {
     padding: 1.5rem;
   }
   
+  .testimonial-text-slide p {
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-text-slide cite {
+    font-size: 0.85rem;
+  }
+  
+  .slideshow.text-only .slide-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
   .slideshow.text-only .slide-nav.prev {
     left: -10px;
   }
   
   .slideshow.text-only .slide-nav.next {
     right: -10px;
-  }
-  
-  .slideshow {
-    padding: 0 20px;
-  }
-  
-  .slide-nav.prev {
-    left: -15px;
-  }
-  
-  .slide-nav.next {
-    right: -15px;
-  }
-  
-  /* Ensure only one slide shows on mobile */
-  .slide {
-    display: none !important;
-  }
-  
-  .slide.active {
-    display: block !important;
-  }
-  
-  .slide img {
-    height: 340px;
-  }
-  
-  .testimonial-bg {
-    height: 340px;
-  }
-  
-  .testimonial-person {
-    width: 60px !important;
-    height: 60px !important;
-    bottom: 15px !important;
-    left: 15px !important;
-    border-width: 2px;
-  }
-  
-  .testimonial-quote {
-    bottom: 15px;
-    left: 85px;
-    right: 15px;
-    padding: 1rem;
-  }
-  
-  .testimonial-quote p {
-    font-size: .9rem;
   }
 }
 
