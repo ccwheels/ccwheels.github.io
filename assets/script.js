@@ -43,14 +43,13 @@ if (slides.length > 0) {
 // Mobile menu toggle
 function toggleMenu() {
   const nav = document.querySelector('nav');
-  const body = document.body;
   
   if (!nav) {
     return;
   }
   
   nav.classList.toggle('active');
-  body.classList.toggle('menu-open');
+  document.body.classList.toggle('menu-open');
   
   const menuToggle = document.querySelector('.menu-toggle');
   if (menuToggle) {
@@ -60,15 +59,12 @@ function toggleMenu() {
 
 function closeMenu() {
   const nav = document.querySelector('nav');
-  const body = document.body;
   
   if (nav) {
     nav.classList.remove('active');
   }
   
-  if (body) {
-    body.classList.remove('menu-open');
-  }
+  document.body.classList.remove('menu-open');
   
   const menuToggle = document.querySelector('.menu-toggle');
   if (menuToggle) {
