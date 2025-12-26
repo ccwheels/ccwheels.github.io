@@ -10,8 +10,8 @@ function showSlide(i) {
   else current = i;
   slides.forEach(s => s.classList.remove('active'));
   dots.forEach(d => d.classList.remove('active'));
-  slides[current].classList.add('active');
-  dots[current].classList.add('active');
+  if (slides[current]) slides[current].classList.add('active');
+  if (dots[current]) dots[current].classList.add('active');
 }
 
 function changeSlide(step) {
@@ -35,29 +35,38 @@ if (slideshow) {
   slideshow.addEventListener('mouseleave', startTimer);
 }
 
-showSlide(0);
-startTimer();
+if (slides.length > 0) {
+  showSlide(0);
+  startTimer();
+}
 
 // Mobile menu toggle
 function toggleMenu() {
   const nav = document.querySelector('nav');
   const menuToggle = document.querySelector('.menu-toggle');
   
-  if (!nav || !menuToggle) {
-    console.error('Menu elements not found');
+  if (!nav) {
     return;
   }
   
   nav.classList.toggle('active');
-  menuToggle.classList.toggle('active');
+  document.body.classList.toggle('menu-open');
+  
+  if (menuToggle) {
+    menuToggle.classList.toggle('active');
+  }
 }
 
 function closeMenu() {
   const nav = document.querySelector('nav');
   const menuToggle = document.querySelector('.menu-toggle');
   
-  if (nav && menuToggle) {
+  if (nav) {
     nav.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+  
+  if (menuToggle) {
     menuToggle.classList.remove('active');
   }
 }
@@ -66,24 +75,6 @@ function closeMenu() {
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelectorAll('.nav-links a');
-  
-  if (menuToggle) {
-    menuToggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      toggleMenu();
-    });
-  }
-  
-  navLinks.forEach(link => {
-    link.addEventListener('click', function() {
-      closeMenu();
-    });
-  });
-});
-
-// Also add event listener as backup
-document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('nav');
   
   if (menuToggle) {
@@ -94,25 +85,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Close menu when clicking nav links
-  const navLinks = document.querySelectorAll('.nav-links a');
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
       closeMenu();
     });
   });
   
-  // Close menu when clicking outside
+  // Close menu when clicking outside (works for mobile too)
   document.addEventListener('click', function(event) {
-    const navbar = document.querySelector('.navbar');
-    if (navbar && nav && !navbar.contains(event.target) && nav.classList.contains('active')) {
-      closeMenu();
+    if (nav && nav.classList.contains('active')) {
+      const clickedInsideNav = nav.contains(event.target);
+      const clickedOnToggle = (menuToggle && menuToggle.contains(event.target)) ||
+                              event.target.closest('.mobile-nav-item');
+      
+      if (!clickedInsideNav && !clickedOnToggle) {
+        closeMenu();
+      }
     }
   });
 });
 
-// Contact form - FormSubmit handles submission
-// Form will redirect to FormSubmit's thank you page after submission
-
 // Footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearElement = document.getElementById('year');
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
