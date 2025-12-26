@@ -415,6 +415,19 @@ h3 a:hover {
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 0; /* No top margin since navbar is hidden */
+    min-height: 50vh;
+    background-attachment: scroll;
+    background-size: 100% auto !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #333 !important;
+    padding: 3vh 4vw;
+  }
+}
+
 /* Mobile hero styles - match service-areas */
 @media (max-width: 768px) {
   .hero {
