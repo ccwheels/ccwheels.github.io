@@ -40,11 +40,11 @@ if (slides.length > 0) {
   startTimer();
 }
 
-// Mobile menu toggle
 function toggleMenu() {
   const nav = document.querySelector('nav');
   
   if (!nav) {
+    console.log('nav not found!');
     return;
   }
   
