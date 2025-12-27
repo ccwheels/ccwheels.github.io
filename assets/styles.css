@@ -815,12 +815,14 @@ figcaption {
 }
 
 .slide {
-  display: none;
+  display: none !important;
   position: relative;
+  opacity: 0;
 }
 
 .slide.active {
-  display: block;
+  display: block !important;
+  opacity: 1;
   animation: fade .6s ease-in-out;
 }
 
@@ -946,7 +948,6 @@ figcaption {
     right: -10px;
   }
 }
-
 /* ===== FORM ===== */
 .form {
   max-width: 900px;
