@@ -40,8 +40,9 @@ if (slides.length > 0) {
   startTimer();
 }
 
+// Hamburger Menu Toggle Function (works from bottom nav)
 function toggleMenu() {
-  const nav = document.querySelector('nav');
+  const nav = document.querySelector('.navbar nav');
   
   if (!nav) {
     console.log('nav not found!');
@@ -50,15 +51,11 @@ function toggleMenu() {
   
   nav.classList.toggle('active');
   document.body.classList.toggle('menu-open');
-  
-  const menuToggle = document.querySelector('.menu-toggle');
-  if (menuToggle) {
-    menuToggle.classList.toggle('active');
-  }
 }
 
+// Close Menu Function
 function closeMenu() {
-  const nav = document.querySelector('nav');
+  const nav = document.querySelector('.navbar nav');
   
   if (nav) {
     nav.classList.remove('active');
@@ -67,42 +64,46 @@ function closeMenu() {
   if (document.body) {
     document.body.classList.remove('menu-open');
   }
-  
-  const menuToggle = document.querySelector('.menu-toggle');
-  if (menuToggle) {
-    menuToggle.classList.remove('active');
-  }
 }
 
 // Initialize menu on page load
 document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelectorAll('.nav-links a');
+  const navLinks = document.querySelectorAll('.nav-links a, .nav-links button');
   
-  if (menuToggle) {
-    menuToggle.addEventListener('click', function(e) {
-      e.preventDefault();
-      toggleMenu();
-    });
-  }
-  
+  // Close menu when clicking on nav links
   navLinks.forEach(link => {
     link.addEventListener('click', function() {
       closeMenu();
     });
   });
   
-  // Close menu when clicking outside
+  // Close menu when clicking outside (but not on bottom nav menu button)
   document.addEventListener('click', function(event) {
-    const nav = document.querySelector('nav');
+    const nav = document.querySelector('.navbar nav');
     if (nav && nav.classList.contains('active')) {
       const clickedInsideNav = nav.contains(event.target);
-      const clickedOnToggle = (menuToggle && menuToggle.contains(event.target)) ||
-                              event.target.closest('.mobile-nav-item');
+      const clickedOnBottomNavMenu = event.target.closest('.mobile-nav-item') && 
+                                     (event.target.closest('.mobile-nav-item').textContent.includes('Menu') ||
+                                      event.target.closest('.mobile-nav-item').querySelector('i.fa-bars'));
       
-      if (!clickedInsideNav && !clickedOnToggle) {
+      // Don't close if clicking inside nav or on bottom nav menu button
+      if (!clickedInsideNav && !clickedOnBottomNavMenu) {
         closeMenu();
       }
+    }
+  });
+  
+  // Close menu on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
+  });
+  
+  // Close menu when window is resized to desktop size
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      closeMenu();
     }
   });
 });
