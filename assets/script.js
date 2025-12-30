@@ -91,26 +91,25 @@ function closeMenu() {
   console.log('Menu closed via closeMenu()');
 }
 
-
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM loaded, initializing menu...'); // Debug
+  console.log('DOM loaded, initializing menu...');
   
   // Close menu when clicking on nav links
   const navLinks = document.querySelectorAll('.nav-links a, .nav-links button');
-  console.log('Found nav links:', navLinks.length); // Debug
+  console.log('Found nav links:', navLinks.length);
   
   navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
-      console.log('Nav link clicked, closing menu'); // Debug
+      console.log('Nav link clicked, closing menu');
       closeMenu();
     });
   });
   
   // Close menu when clicking outside
   document.addEventListener('click', function(event) {
-    const nav = document.querySelector('.navbar nav') || 
-                document.querySelector('header.navbar nav') ||
+    const nav = document.querySelector('header.navbar nav') || 
+                document.querySelector('.navbar nav') ||
                 document.querySelector('nav');
     
     if (nav && nav.classList.contains('active')) {
@@ -122,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Don't close if clicking inside nav, on bottom nav, or on menu button
       if (!clickedInsideNav && !clickedOnBottomNav && !clickedOnMenuButton) {
-        console.log('Clicking outside, closing menu'); // Debug
+        console.log('Clicking outside, closing menu');
         closeMenu();
       }
     }
