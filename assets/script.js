@@ -42,20 +42,36 @@ if (slides.length > 0) {
 
 // Hamburger Menu Toggle Function (works from bottom nav)
 function toggleMenu() {
-  const nav = document.querySelector('.navbar nav');
+  // Try multiple selectors to find the nav
+  const nav = document.querySelector('.navbar nav') || 
+              document.querySelector('header.navbar nav') ||
+              document.querySelector('nav');
+  
+  console.log('toggleMenu called, nav found:', nav); // Debug
   
   if (!nav) {
-    console.log('nav not found!');
+    console.error('Nav element not found!');
     return;
   }
   
-  nav.classList.toggle('active');
-  document.body.classList.toggle('menu-open');
+  const isActive = nav.classList.contains('active');
+  
+  if (isActive) {
+    nav.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  } else {
+    nav.classList.add('active');
+    document.body.classList.add('menu-open');
+  }
+  
+  console.log('Menu toggled, active:', !isActive); // Debug
 }
 
 // Close Menu Function
 function closeMenu() {
-  const nav = document.querySelector('.navbar nav');
+  const nav = document.querySelector('.navbar nav') || 
+              document.querySelector('header.navbar nav') ||
+              document.querySelector('nav');
   
   if (nav) {
     nav.classList.remove('active');
@@ -66,28 +82,37 @@ function closeMenu() {
   }
 }
 
-// Initialize menu on page load
+// Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
-  const navLinks = document.querySelectorAll('.nav-links a, .nav-links button');
+  console.log('DOM loaded, initializing menu...'); // Debug
   
   // Close menu when clicking on nav links
+  const navLinks = document.querySelectorAll('.nav-links a, .nav-links button');
+  console.log('Found nav links:', navLinks.length); // Debug
+  
   navLinks.forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function(e) {
+      console.log('Nav link clicked, closing menu'); // Debug
       closeMenu();
     });
   });
   
-  // Close menu when clicking outside (but not on bottom nav menu button)
+  // Close menu when clicking outside
   document.addEventListener('click', function(event) {
-    const nav = document.querySelector('.navbar nav');
+    const nav = document.querySelector('.navbar nav') || 
+                document.querySelector('header.navbar nav') ||
+                document.querySelector('nav');
+    
     if (nav && nav.classList.contains('active')) {
       const clickedInsideNav = nav.contains(event.target);
-      const clickedOnBottomNavMenu = event.target.closest('.mobile-nav-item') && 
-                                     (event.target.closest('.mobile-nav-item').textContent.includes('Menu') ||
-                                      event.target.closest('.mobile-nav-item').querySelector('i.fa-bars'));
+      const clickedOnBottomNav = event.target.closest('.mobile-bottom-nav');
+      const clickedOnMenuButton = event.target.closest('.mobile-nav-item') && 
+                                 (event.target.closest('.mobile-nav-item').textContent.trim().includes('Menu') ||
+                                  event.target.closest('.mobile-nav-item').querySelector('i.fa-bars'));
       
-      // Don't close if clicking inside nav or on bottom nav menu button
-      if (!clickedInsideNav && !clickedOnBottomNavMenu) {
+      // Don't close if clicking inside nav, on bottom nav, or on menu button
+      if (!clickedInsideNav && !clickedOnBottomNav && !clickedOnMenuButton) {
+        console.log('Clicking outside, closing menu'); // Debug
         closeMenu();
       }
     }
