@@ -43,34 +43,41 @@ if (slides.length > 0) {
 // Hamburger Menu Toggle Function (works from bottom nav)
 function toggleMenu() {
   // Try multiple selectors to find the nav
-  const nav = document.querySelector('.navbar nav') || 
-              document.querySelector('header.navbar nav') ||
+  const nav = document.querySelector('header.navbar nav') || 
+              document.querySelector('.navbar nav') ||
               document.querySelector('nav');
   
-  console.log('toggleMenu called, nav found:', nav); // Debug
+  console.log('toggleMenu called');
+  console.log('Nav element:', nav);
+  console.log('Nav classes before:', nav ? nav.className : 'nav not found');
   
   if (!nav) {
     console.error('Nav element not found!');
+    alert('Menu navigation not found. Please refresh the page.');
     return;
   }
   
   const isActive = nav.classList.contains('active');
   
   if (isActive) {
+    // Close menu
     nav.classList.remove('active');
     document.body.classList.remove('menu-open');
+    console.log('Menu closed');
   } else {
+    // Open menu
     nav.classList.add('active');
     document.body.classList.add('menu-open');
+    console.log('Menu opened');
+    console.log('Nav classes after:', nav.className);
+    console.log('Nav computed style left:', window.getComputedStyle(nav).left);
   }
-  
-  console.log('Menu toggled, active:', !isActive); // Debug
 }
 
 // Close Menu Function
 function closeMenu() {
-  const nav = document.querySelector('.navbar nav') || 
-              document.querySelector('header.navbar nav') ||
+  const nav = document.querySelector('header.navbar nav') || 
+              document.querySelector('.navbar nav') ||
               document.querySelector('nav');
   
   if (nav) {
@@ -80,7 +87,10 @@ function closeMenu() {
   if (document.body) {
     document.body.classList.remove('menu-open');
   }
+  
+  console.log('Menu closed via closeMenu()');
 }
+
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', function() {
