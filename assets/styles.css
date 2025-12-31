@@ -1117,6 +1117,8 @@ figcaption {
   position: relative;
   padding-right: 3rem;
   transition: color 0.3s;
+  pointer-events: auto !important;
+  z-index: 1;
 }
 
 .faq-question::after {
@@ -1129,41 +1131,39 @@ figcaption {
   color: var(--brand);
   font-weight: 300;
   transition: transform 0.3s;
+  pointer-events: none;
 }
 
 .faq-item.active .faq-question::after {
-  transform: translateY(-50%) rotate(45deg);
+  content: '−';
+  transform: translateY(-50%) rotate(0deg);
 }
 
 .faq-question:hover {
   color: var(--brand);
+  background-color: #f9f9f9;
 }
 
 .faq-answer {
-  padding: 0 1.5rem 1.5rem 1.5rem;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem;
   color: var(--muted);
   line-height: 1.8;
-  display: none;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
-  display: block;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  max-height: 2000px;
+  padding: 0 1.5rem 1.5rem 1.5rem;
 }
 
 .faq-answer p {
   margin: 0 0 1rem 0;
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
 }
 
 .faq-answer ul,
@@ -1191,17 +1191,8 @@ figcaption {
   text-decoration: underline;
 }
 
-/* Ensure FAQ questions are clickable */
-.faq-question {
-  cursor: pointer !important;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-.faq-question * {
-  pointer-events: none; /* Prevent child elements from blocking clicks */
+.faq-answer .btn {
+  pointer-events: auto;
 }
 
 /* Mobile adjustments for FAQs */
@@ -1221,11 +1212,14 @@ figcaption {
   }
   
   .faq-answer {
-    padding: 0 1.25rem 1.25rem 1.25rem;
+    padding: 0 1.25rem;
     font-size: 0.95rem;
   }
+  
+  .faq-item.active .faq-answer {
+    padding: 0 1.25rem 1.25rem 1.25rem;
+  }
 }
-
 /* ==================== SERVICES LIST ==================== */
 .services-container {
   max-width: 1200px;
