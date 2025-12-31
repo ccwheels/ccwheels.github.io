@@ -376,6 +376,73 @@
   setTimeout(setupFAQs, 500);
 })();
 </script>
+
+  <script>
+// FAQ Toggle Functionality
+(function() {
+  'use strict';
+  
+  function initFAQs() {
+    var faqItems = document.getElementsByClassName('faq-item');
+    console.log('Initializing FAQs, found items:', faqItems.length);
+    
+    for (var i = 0; i < faqItems.length; i++) {
+      var item = faqItems[i];
+      var question = item.querySelector('.faq-question');
+      
+      if (question) {
+        // Remove any existing listeners by cloning
+        var newQuestion = question.cloneNode(true);
+        question.parentNode.replaceChild(newQuestion, question);
+        
+        // Add click handler
+        newQuestion.onclick = function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          var clickedItem = this.closest('.faq-item');
+          if (!clickedItem) return;
+          
+          var isActive = clickedItem.classList.contains('active');
+          
+          // Close all FAQs
+          var allItems = document.getElementsByClassName('faq-item');
+          for (var j = 0; j < allItems.length; j++) {
+            allItems[j].classList.remove('active');
+          }
+          
+          // Open clicked one if it wasn't active
+          if (!isActive) {
+            clickedItem.classList.add('active');
+            console.log('FAQ opened');
+          } else {
+            console.log('FAQ closed');
+          }
+        };
+        
+        console.log('FAQ question', i, 'initialized');
+      }
+    }
+  }
+  
+  // Try multiple times to ensure it runs
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(initFAQs, 100);
+      setTimeout(initFAQs, 500);
+    });
+  } else {
+    initFAQs();
+    setTimeout(initFAQs, 100);
+    setTimeout(initFAQs, 500);
+  }
+  
+  // Also try on window load
+  window.addEventListener('load', function() {
+    setTimeout(initFAQs, 200);
+  });
+})();
+</script>
   
 </body>
 </html>
