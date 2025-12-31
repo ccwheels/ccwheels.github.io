@@ -341,5 +341,41 @@
     </button>
   </div>
 
+  <script>
+// FAQs functionality - inline version
+(function() {
+  function setupFAQs() {
+    const questions = document.querySelectorAll('.faq-question');
+    console.log('Setting up FAQs, found:', questions.length);
+    
+    questions.forEach(function(q) {
+      q.addEventListener('click', function() {
+        const item = this.closest('.faq-item');
+        const wasActive = item.classList.contains('active');
+        
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(function(i) {
+          i.classList.remove('active');
+        });
+        
+        // Open if wasn't active
+        if (!wasActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+  }
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupFAQs);
+  } else {
+    setupFAQs();
+  }
+  
+  // Fallback
+  setTimeout(setupFAQs, 500);
+})();
+</script>
+  
 </body>
 </html>
