@@ -1191,6 +1191,19 @@ figcaption {
   text-decoration: underline;
 }
 
+/* Ensure FAQ questions are clickable */
+.faq-question {
+  cursor: pointer !important;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.faq-question * {
+  pointer-events: none; /* Prevent child elements from blocking clicks */
+}
+
 /* Mobile adjustments for FAQs */
 @media (max-width: 768px) {
   .faqs-container {
