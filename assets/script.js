@@ -173,3 +173,56 @@ const yearElement = document.getElementById('year');
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
+
+// FAQs expandable functionality
+function initFAQs() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  console.log('FAQs initialized, found questions:', faqQuestions.length);
+  
+  faqQuestions.forEach(question => {
+    // Remove any existing listeners
+    const newQuestion = question.cloneNode(true);
+    question.parentNode.replaceChild(newQuestion, question);
+    
+    // Add click listener to the new element
+    newQuestion.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const faqItem = this.closest('.faq-item');
+      if (!faqItem) return;
+      
+      const isActive = faqItem.classList.contains('active');
+      
+      console.log('FAQ clicked, currently active:', isActive);
+      
+      // Close all other FAQs (optional - remove if you want multiple open)
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          item.classList.remove('active');
+        }
+      });
+      
+      // Toggle current FAQ
+      if (isActive) {
+        faqItem.classList.remove('active');
+        console.log('FAQ closed');
+      } else {
+        faqItem.classList.add('active');
+        console.log('FAQ opened');
+      }
+    });
+  });
+}
+
+// Initialize FAQs when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initFAQs);
+} else {
+  // DOM is already ready
+  initFAQs();
+}
+
+// Also try initializing after a short delay in case script loads before DOM
+setTimeout(initFAQs, 100);
