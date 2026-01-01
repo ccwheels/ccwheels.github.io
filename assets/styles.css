@@ -129,54 +129,49 @@ h3 a:hover {
 
 /* Mobile popup menu triggered from bottom nav */
 @media (max-width: 768px) {
-  /* IMPORTANT: Make nav break out of hidden parent when active */
-  /* Use visibility and position to override parent's display:none */
-  header.navbar nav.active,
-  .navbar nav.active,
-  nav.active {
-    /* Force visibility even when parent is display:none */
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  /* Force nav to be accessible and visible when active, even if parent navbar is hidden */
+  .navbar nav,
+  header.navbar nav {
+    /* Hidden by default */
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
     
-    /* Position it independently */
+    /* Positioned for popup */
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    max-width: 100vw !important;
+    z-index: 100000 !important;
     
     /* Styling */
     background: #ffffff !important;
-    transition: opacity 0.3s ease, visibility 0.3s ease !important;
-    z-index: 100000 !important;
-    padding: 3rem 2rem 2rem 2rem !important;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
     overflow-y: auto !important;
     margin: 0 !important;
+    padding: 3rem 2rem 2rem 2rem !important;
     
-    /* Override any inherited display from parent */
-    transform: translateX(0) !important;
+    /* Transition */
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
   }
   
-  /* Hide nav when not active */
-  header.navbar nav:not(.active),
-  .navbar nav:not(.active),
-  nav:not(.active) {
-    display: none !important;
-    visibility: hidden !important;
+  /* Show nav when active */
+  .navbar nav.active,
+  header.navbar nav.active {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
-  /* Nav links container */
-  nav.active .nav-links,
+  /* Nav links container - only show when nav is active */
   .navbar nav.active .nav-links,
   header.navbar nav.active .nav-links {
     flex-direction: column !important;
     gap: 0 !important;
     padding: 0 !important;
-    margin: 1rem 0 0 0 !important;
+    margin: 2rem 0 0 0 !important;
     list-style: none !important;
     display: flex !important;
     width: 100% !important;
@@ -184,7 +179,6 @@ h3 a:hover {
   }
   
   /* Nav link items */
-  nav.active .nav-links li,
   .navbar nav.active .nav-links li,
   header.navbar nav.active .nav-links li {
     width: 100% !important;
@@ -195,8 +189,6 @@ h3 a:hover {
   }
   
   /* Nav links and buttons */
-  nav.active .nav-links a,
-  nav.active .nav-links button,
   .navbar nav.active .nav-links a,
   .navbar nav.active .nav-links button,
   header.navbar nav.active .nav-links a,
@@ -217,16 +209,15 @@ h3 a:hover {
     box-sizing: border-box !important;
   }
   
-  nav.active .nav-links a:hover,
-  nav.active .nav-links button:hover,
   .navbar nav.active .nav-links a:hover,
-  .navbar nav.active .nav-links button:hover {
+  .navbar nav.active .nav-links button:hover,
+  header.navbar nav.active .nav-links a:hover,
+  header.navbar nav.active .nav-links button:hover {
     background: #f9f9f9 !important;
     color: var(--brand) !important;
   }
   
   /* Book Online button styling */
-  nav.active .nav-book-btn,
   .navbar nav.active .nav-book-btn,
   header.navbar nav.active .nav-book-btn {
     display: block !important;
@@ -240,14 +231,15 @@ h3 a:hover {
     width: 100% !important;
   }
   
-  nav.active .nav-book-btn:hover,
-  .navbar nav.active .nav-book-btn:hover {
+  .navbar nav.active .nav-book-btn:hover,
+  header.navbar nav.active .nav-book-btn:hover {
     background-color: var(--brand-2) !important;
     color: white !important;
   }
   
   /* Close button (X) in top right */
-  nav.active::after {
+  .navbar nav.active::after,
+  header.navbar nav.active::after {
     content: '✕' !important;
     position: fixed !important;
     top: 1rem !important;
@@ -265,10 +257,7 @@ h3 a:hover {
     z-index: 100001 !important;
     line-height: 1 !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-  }
-  
-  nav.active::after:hover {
-    background: #f0f0f0 !important;
+    pointer-events: auto !important;
   }
   
   /* Overlay backdrop */
@@ -288,81 +277,6 @@ h3 a:hover {
     overflow: hidden !important;
     position: relative !important;
     height: 100% !important;
-  }
-}
-  
-  /* Prevent body scroll when menu is open */
-body.menu-open {
-  overflow: hidden !important;
-  position: relative !important;
-}
-  
-  /* Show bottom nav on mobile */
-  .mobile-bottom-nav {
-    display: grid !important;
-  }
-  
-  body {
-    padding-bottom: 80px !important;
-  }
-}
-
-/* Mobile Bottom Navigation Bar */
-.mobile-bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  background: #fff;
-  border-top: 1px solid #e0e0e0;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-  z-index: 99999;
-  padding: 0.5rem 0;
-  display: none;
-  grid-template-columns: repeat(4, 1fr);
-  align-items: center;
-}
-
-.mobile-nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 0.25rem;
-  text-decoration: none;
-  color: #666;
-  font-size: 0.75rem;
-  transition: color 0.3s;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.mobile-nav-item i {
-  font-size: 1.25rem;
-  margin-bottom: 0.15rem;
-  display: block;
-}
-
-.mobile-nav-item span {
-  font-size: 0.7rem;
-  font-weight: 600;
-  display: block;
-}
-
-.mobile-nav-item:hover,
-.mobile-nav-item:active,
-.mobile-nav-item:focus {
-  color: var(--brand);
-  outline: none;
-}
-
-/* Hide on desktop */
-@media (min-width: 769px) {
-  .mobile-bottom-nav {
-    display: none !important;
   }
 }
 
