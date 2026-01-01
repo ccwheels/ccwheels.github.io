@@ -40,44 +40,26 @@ if (slides.length > 0) {
   startTimer();
 }
 
-// Hamburger Menu Toggle Function (works from bottom nav)
+// Mobile Menu Functions (for bottom nav button)
 function toggleMenu() {
-  // Find the nav element - try multiple selectors
-  const nav = document.querySelector('header.navbar nav') || 
-              document.querySelector('.navbar nav') ||
-              document.querySelector('nav');
-  
-  if (!nav) {
-    console.error('Nav element not found!');
-    return;
-  }
-  
-  const isActive = nav.classList.contains('active');
-  
-  if (isActive) {
-    // Close menu
-    nav.classList.remove('active');
-    document.body.classList.remove('menu-open');
-  } else {
-    // Open menu
-    nav.classList.add('active');
-    document.body.classList.add('menu-open');
+  const popup = document.getElementById('mobile-menu-popup');
+  if (popup) {
+    popup.classList.toggle('active');
+    document.body.classList.toggle('mobile-menu-open');
   }
 }
 
-// Close Menu Function
+function closeMobileMenu() {
+  const popup = document.getElementById('mobile-menu-popup');
+  if (popup) {
+    popup.classList.remove('active');
+    document.body.classList.remove('mobile-menu-open');
+  }
+}
+
+// Also keep the old closeMenu for navbar links (if needed)
 function closeMenu() {
-  const nav = document.querySelector('header.navbar nav') || 
-              document.querySelector('.navbar nav') ||
-              document.querySelector('nav');
-  
-  if (nav) {
-    nav.classList.remove('active');
-  }
-  
-  if (document.body) {
-    document.body.classList.remove('menu-open');
-  }
+  closeMobileMenu(); // Use the same function
 }
 
 // Initialize on page load
