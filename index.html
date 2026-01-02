@@ -92,23 +92,21 @@
   
 <body>
 
-  <!-- Mobile Menu Popup (separate from navbar) -->
+<!-- Mobile Menu Popup - ADD THIS RIGHT HERE -->
 <div id="mobile-menu-popup" class="mobile-menu-popup">
-  <div class="mobile-menu-content">
-    <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu">✕</button>
-    <nav class="mobile-menu-nav">
-      <ul class="mobile-menu-links">
-        <li><a href="index.html#home" onclick="closeMobileMenu()">Home</a></li>
-        <li><a href="index.html#services-list" onclick="closeMobileMenu()">Services</a></li>
-        <li><a href="service-areas.html" onclick="closeMobileMenu()">Service Areas</a></li>
-        <li><a href="faqs.html" onclick="closeMobileMenu()">FAQs</a></li>
-        <li><a href="index.html#testimonials" onclick="closeMobileMenu()">Testimonials</a></li>
-        <li><a href="index.html#contact" onclick="closeMobileMenu()">Contact</a></li>
-        <li><button data-token="03f9b3d242034807a562ba24b6278aa1" data-orgname="Hett-Painting-Group" class="btn mobile-menu-book-btn" onClick="HCPWidget.openModal(); closeMobileMenu();">Book Online</button></li>
-      </ul>
-    </nav>
-  </div>
   <div class="mobile-menu-overlay" onclick="closeMobileMenu()"></div>
+  <div class="mobile-menu-content">
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html#home" onclick="closeMobileMenu()">Home</a></li>
+      <li><a href="index.html#services-list" onclick="closeMobileMenu()">Services</a></li>
+      <li><a href="service-areas.html" onclick="closeMobileMenu()">Service Areas</a></li>
+      <li><a href="faqs.html" onclick="closeMobileMenu()">FAQs</a></li>
+      <li><a href="index.html#testimonials" onclick="closeMobileMenu()">Testimonials</a></li>
+      <li><a href="index.html#contact" onclick="closeMobileMenu()">Contact</a></li>
+      <li><button class="mobile-menu-book-btn" data-token="03f9b3d242034807a562ba24b6278aa1" data-orgname="Hett-Painting-Group" onclick="HCPWidget.openModal(); closeMobileMenu();">Book Online</button></li>
+    </ul>
+  </div>
 </div>
   
   <!-- ==================== NAVIGATION ==================== -->
