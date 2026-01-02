@@ -105,29 +105,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // FAQs expandable functionality
+// FAQs expandable functionality
 document.addEventListener('DOMContentLoaded', function() {
-  const faqQuestions = document.querySelectorAll('.faq-question');
+  var faqItems = document.querySelectorAll('.faq-item');
   
-  faqQuestions.forEach(question => {
-    question.addEventListener('click', function() {
-      const faqItem = this.parentElement;
-      const isActive = faqItem.classList.contains('active');
-      
-      // Close all other FAQs
-      document.querySelectorAll('.faq-item').forEach(item => {
-        if (item !== faqItem) {
+  faqItems.forEach(function(faqItem) {
+    var question = faqItem.querySelector('.faq-question');
+    
+    if (question) {
+      question.addEventListener('click', function() {
+        var isActive = faqItem.classList.contains('active');
+        
+        // Close all FAQs
+        document.querySelectorAll('.faq-item').forEach(function(item) {
           item.classList.remove('active');
+        });
+        
+        // Open clicked FAQ if it wasn't active
+        if (!isActive) {
+          faqItem.classList.add('active');
         }
       });
-      
-      // Toggle current FAQ
-      if (isActive) {
-        faqItem.classList.remove('active');
-      } else {
-        faqItem.classList.add('active');
-      }
-    });
+    }
   });
 });
   
