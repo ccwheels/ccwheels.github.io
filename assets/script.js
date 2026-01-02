@@ -40,7 +40,7 @@ if (slides.length > 0) {
   startTimer();
 }
 
-// Mobile Menu Functions (for bottom nav button)
+// Mobile Menu Functions
 function toggleMenu() {
   const popup = document.getElementById('mobile-menu-popup');
   if (popup) {
