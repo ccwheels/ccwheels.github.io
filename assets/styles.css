@@ -1516,11 +1516,6 @@ body.mobile-menu-open {
   overflow: hidden !important;
 }
 
-@media (min-width: 769px) {
-  #mobile-menu-popup {
-    display: none !important;
-  }
-}
 
 /* ===== MOBILE BOTTOM NAV - RESTORE STYLING ===== */
 .mobile-bottom-nav {
@@ -1599,9 +1594,3 @@ body.mobile-menu-open {
   text-decoration: none !important;
 }
 
-/* Hide on desktop */
-@media (min-width: 769px) {
-  .mobile-bottom-nav {
-    display: none !important;
-  }
-}
