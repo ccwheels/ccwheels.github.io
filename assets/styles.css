@@ -117,6 +117,112 @@ h3 a:hover {
   }
 }
 
+/* ===== MOBILE MENU POPUP - HIDE BY DEFAULT ===== */
+#mobile-menu-popup {
+  display: none !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100000;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+#mobile-menu-popup.active {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#mobile-menu-popup .mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#mobile-menu-popup .mobile-menu-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  z-index: 2;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+#mobile-menu-popup.active .mobile-menu-content {
+  transform: translateX(0);
+}
+
+#mobile-menu-popup .mobile-menu-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mobile-menu-popup .mobile-menu-links {
+  list-style: none;
+  padding: 0;
+  margin: 50px 0 0 0;
+}
+
+#mobile-menu-popup .mobile-menu-links li {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #eee;
+}
+
+#mobile-menu-popup .mobile-menu-links a {
+  display: block;
+  padding: 15px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#mobile-menu-popup .mobile-menu-book-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 15px;
+  background: #b28735;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+  #mobile-menu-popup {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
 /* Mobile menu styles - hide navbar on mobile */
 @media (max-width: 768px) {
   .navbar {
