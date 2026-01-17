@@ -38,28 +38,22 @@ h3 a:hover {
 }
 
 @media (max-width: 768px) {
-  /* Show logo on mobile only - smaller size */
   .mobile-hero-logo {
     display: block !important;
     position: absolute !important;
-    top: 1.5rem !important;
+    top: 1rem !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 10 !important;
-    height: 60px !important;
+    height: 50px !important;
     width: auto !important;
-    max-width: 120px !important;
+    max-width: 100px !important;
     margin: 0 auto !important;
     filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
   }
   
-  .hero {
-    position: relative !important;
-    margin-top: 0 !important;
-  }
-  
   .hero-card {
-    margin-top: 90px !important;
+    margin-top: 80px !important;
   }
 }
 
