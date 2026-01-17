@@ -31,32 +31,40 @@ h3 a:hover {
   text-decoration: underline;
 }
 
-/* ===== MOBILE LOGO OVER HERO - SMALLER SIZE ===== */
+/* ===== MOBILE LOGO OVER HERO BACKGROUND ===== */
 /* Hide on desktop */
 .mobile-hero-logo {
   display: none;
 }
 
 @media (max-width: 768px) {
+  .hero {
+    position: relative !important;
+  }
+  
+  /* Position logo inside hero section, overlaying background */
   .mobile-hero-logo {
     display: block !important;
     position: absolute !important;
-    top: 1rem !important;
+    top: 2rem !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 10 !important;
-    height: 50px !important;
+    height: 60px !important;
     width: auto !important;
-    max-width: 100px !important;
+    max-width: 120px !important;
     margin: 0 auto !important;
     filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
   }
   
+  .hero {
+    margin-top: 0 !important;
+  }
+  
   .hero-card {
-    margin-top: 80px !important;
+    margin-top: 100px !important;
   }
 }
-
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
