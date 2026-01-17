@@ -117,6 +117,39 @@ h3 a:hover {
   }
 }
 
+/* ===== MOBILE LOGO AT TOP - LARGE VERSION ===== */
+@media (max-width: 768px) {
+  /* Show logo at top on mobile */
+  .navbar .logo,
+  header.navbar .logo {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 1.5rem 0 !important;
+    background: #fff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+  }
+  
+  .navbar .logo-img,
+  header.navbar .logo-img {
+    height: 120px !important;
+    width: auto !important;
+    max-width: 250px !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+  
+  /* Add padding to hero to account for fixed logo */
+  .hero {
+    margin-top: 140px !important;
+  }
+}
+
 /* ===== MOBILE MENU POPUP - HIDE BY DEFAULT ===== */
 #mobile-menu-popup {
   display: none !important;
