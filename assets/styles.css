@@ -31,6 +31,34 @@ h3 a:hover {
   text-decoration: underline;
 }
 
+/* ===== MOBILE LOGO - SWAP IMAGE SOURCE ===== */
+@media (max-width: 768px) {
+  .hero {
+    position: relative !important;
+  }
+  
+  .navbar .logo-img {
+    content: url('assets/images/HPG copy 2.png') !important;
+    height: 100px !important;
+    width: auto !important;
+    max-width: 180px !important;
+    position: absolute !important;
+    top: 2rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 10 !important;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  }
+  
+  .hero {
+    margin-top: 0 !important;
+  }
+  
+  .hero-card {
+    margin-top: 120px !important;
+  }
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
