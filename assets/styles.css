@@ -31,31 +31,35 @@ h3 a:hover {
   text-decoration: underline;
 }
 
-/* ===== MOBILE LOGO - SWAP IMAGE SOURCE ===== */
+/* ===== MOBILE LOGO OVER HERO - SMALLER SIZE ===== */
+/* Hide on desktop */
+.mobile-hero-logo {
+  display: none;
+}
+
 @media (max-width: 768px) {
-  .hero {
-    position: relative !important;
-  }
-  
-  .navbar .logo-img {
-    content: url('assets/images/HPG copy 2.png') !important;
-    height: 100px !important;
-    width: auto !important;
-    max-width: 180px !important;
+  /* Show logo on mobile only - smaller size */
+  .mobile-hero-logo {
+    display: block !important;
     position: absolute !important;
-    top: 2rem !important;
+    top: 1.5rem !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
     z-index: 10 !important;
+    height: 60px !important;
+    width: auto !important;
+    max-width: 120px !important;
+    margin: 0 auto !important;
     filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
   }
   
   .hero {
+    position: relative !important;
     margin-top: 0 !important;
   }
   
   .hero-card {
-    margin-top: 120px !important;
+    margin-top: 90px !important;
   }
 }
 
