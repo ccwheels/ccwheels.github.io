@@ -559,6 +559,35 @@ h3 a:hover {
   }
 }
 
+/* ===== HERO LOGO OVERLAY - MOBILE ONLY ===== */
+.hero-logo-overlay {
+  display: none;
+}
+
+.hero {
+  position: relative;
+}
+
+/* Show logo only on mobile */
+@media (max-width: 768px) {
+  .hero-logo-overlay {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    height: 60px;
+    width: auto;
+    max-width: 120px;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  }
+  
+  .hero-card {
+    margin-top: 100px;
+  }
+}
+
 /* ===== HERO ===== */
 .hero {
   margin-top: 60px;
