@@ -561,7 +561,8 @@ h3 a:hover {
 
 /* ===== HERO LOGO OVERLAY - MOBILE ONLY ===== */
 .hero-logo-overlay {
-  display: none;
+  width: 250px;  /* or whatever size you want */
+  height: auto;  /* maintains aspect ratio */
 }
 
 .hero {
