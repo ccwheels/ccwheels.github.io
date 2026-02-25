@@ -1,5 +1,8 @@
 (function() {
-  var path = 'assets/includes/';
+    var path = 'assets/includes/';
+  if (window.location.pathname.indexOf('/blog/') !== -1 || window.location.pathname.lastIndexOf('/') > 1) {
+    path = '../assets/includes/';
+  }
 
   // Google Tag Manager - inject if not already present
   if (!document.querySelector('script[src*="googletagmanager.com/gtm.js"]')) {
