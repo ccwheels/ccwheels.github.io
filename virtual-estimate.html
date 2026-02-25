@@ -12,23 +12,7 @@
   <link rel="icon" href="assets/images/hpg1.png" type="image/png"/>
 </head>
 <body>
-  <header class="navbar">
-    <a class="logo" href="index.html">
-      <img src="assets/images/hpg1.png" alt="Hett Painting Group" class="logo-img" />
-    </a>
-    <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html#home" onclick="closeMenu()">Home</a></li>
-        <li><a href="index.html#services-list" onclick="closeMenu()">Services</a></li>
-        <li><a href="service-areas.html" onclick="closeMenu()">Service Areas</a></li>
-        <li><a href="index.html#testimonials" onclick="closeMenu()">Testimonials</a></li>
-        <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="site-navbar"></div>
 
   <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/Whyworry.png') center/cover no-repeat;">
     <div class="hero-card">
@@ -115,20 +99,9 @@
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      <p><strong>Hett Painting Group</strong> &middot; Licensed & Insured</p>
-      <div class="socials">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <p class="footer-phone"><a href="tel:4803358099">(480) 335-8099</a></p>
-      <p>&copy; <span id="year"></span> Hett Painting Group. All rights reserved.</p>
-      <p>ROC 361446</p>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
   <script src="assets/script.js"></script>
+  <script src="assets/includes/load.js"></script>
 </body>
 </html>
