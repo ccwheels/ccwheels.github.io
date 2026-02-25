@@ -1,5 +1,5 @@
 (function() {
-  var path = 'includes/';
+  var path = 'assets/includes/';
 
   // Google Tag Manager - inject if not already present
   if (!document.querySelector('script[src*="googletagmanager.com/gtm.js"]')) {
