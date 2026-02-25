@@ -1,0 +1,41 @@
+<!-- Mobile Menu Popup -->
+<div id="mobile-menu-popup" class="mobile-menu-popup">
+  <div class="mobile-menu-overlay" onclick="closeMobileMenu()"></div>
+  <div class="mobile-menu-content">
+    <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+    <ul class="mobile-menu-links">
+      <li><a href="index.html#home" onclick="closeMobileMenu()">Home</a></li>
+      <li><a href="index.html#services-list" onclick="closeMobileMenu()">Services</a></li>
+      <li><a href="service-areas.html" onclick="closeMobileMenu()">Service Areas</a></li>
+      <li><a href="faqs.html" onclick="closeMobileMenu()">FAQs</a></li>
+      <li><a href="index.html#testimonials" onclick="closeMobileMenu()">Testimonials</a></li>
+      <li><a href="index.html#contact" onclick="closeMobileMenu()">Contact</a></li>
+      <li><button class="mobile-menu-book-btn" data-token="03f9b3d242034807a562ba24b6278aa1" data-orgname="Hett-Painting-Group" onclick="HCPWidget.openModal(); closeMobileMenu();">Book Online</button></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Navigation -->
+<header class="navbar">
+  <a class="logo" href="index.html#home">
+    <img src="assets/images/hpg1.png" alt="Hett Painting Group" class="logo-img"/>
+  </a>
+
+  <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html#home" onclick="closeMenu()">Home</a></li>
+      <li><a href="index.html#services-list" onclick="closeMenu()">Services</a></li>
+      <li><a href="service-areas.html" onclick="closeMenu()">Service Areas</a></li>
+      <li><a href="faqs.html" onclick="closeMenu()">FAQs</a></li>
+      <li><a href="index.html#testimonials" onclick="closeMenu()">Testimonials</a></li>
+      <li><a href="index.html#contact" onclick="closeMenu()">Contact</a></li>
+      <li><button data-token="03f9b3d242034807a562ba24b6278aa1" data-orgname="Hett-Painting-Group" class="btn nav-book-btn" onClick="HCPWidget.openModal()">Book Online</button></li>
+    </ul>
+  </nav>
+</header>
